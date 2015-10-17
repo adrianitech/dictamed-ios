@@ -16,17 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wave" translatesAutoresizingMaskIntoConstraints="NO" id="Nh4-Sr-Efc">
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wave" translatesAutoresizingMaskIntoConstraints="NO" id="Nh4-Sr-Efc">
                                 <rect key="frame" x="248" y="222" width="104" height="156"/>
                                 <animations/>
-                                <color key="tintColor" red="0.22352941176470587" green="0.77647058823529413" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © Adrian Mateoaea 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpK-Pv-5XX">
+                                <rect key="frame" x="179" y="552" width="242" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.77647058820000003" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.99607843137254903" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Nh4-Sr-Efc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BjQ-fs-trW"/>
+                            <constraint firstItem="CpK-Pv-5XX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FwT-p8-Iw0"/>
                             <constraint firstItem="Nh4-Sr-Efc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hZA-eU-Nig"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="CpK-Pv-5XX" secondAttribute="bottom" constant="30" id="kwK-xo-WQN"/>
                         </constraints>
                     </view>
                 </viewController>

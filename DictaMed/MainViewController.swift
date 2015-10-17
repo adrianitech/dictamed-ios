@@ -8,16 +8,25 @@
 
 import UIKit
 import SnapKit
-import Alamofire
-import SwiftyJSON
 
 class MainViewController: UIViewController {
     
     var sphereView: UIView!
     
-    var label: UILabel!
+    var button: UIButton!
 
     var recorder: AudioRecorder!
+    
+    var speech: AudioToSpeech!
+    
+    var recording: Bool = false {
+        didSet {
+            UIView.transitionWithView(self.button, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromRight,
+                animations: { () -> Void in
+                    self.button.setImage(UIImage(named: self.recording ? "ic_stop" : "ic_record"), forState: UIControlState.Normal)
+                }, completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,25 +64,35 @@ class MainViewController: UIViewController {
             make.center.equalTo(self.sphereView)
         }
         
-        self.label = UILabel()
-        self.label.font = UIFont.boldSystemFontOfSize(16)
-        self.label.textColor = AppTheme.DARK_GREEN
-        self.label.textAlignment = NSTextAlignment.Center
-        self.label.numberOfLines = 0
-        self.view.addSubview(self.label)
-        self.label.snp_makeConstraints { (make) -> Void in
-            make.leading.equalTo(self.view).offset(35)
-            make.trailing.equalTo(self.view).offset(-35)
-            make.bottom.equalTo(self.view).offset(-35)
+        self.button = UIButton()
+        self.button.setImage(UIImage(named: "ic_record"), forState: UIControlState.Normal)
+        self.button.contentEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+        self.button.tintColor = AppTheme.DARK_GREEN
+        self.button.addTarget(self, action: "startStop", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(self.button)
+        self.button.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+        }
+        
+        let languageButton = UIButton()
+        languageButton.setTitle(String(AudioToSpeechLanguage.Romană), forState: UIControlState.Normal)
+        languageButton.setTitleColor(AppTheme.DARK_GREEN, forState: UIControlState.Normal)
+        languageButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
+        languageButton.contentEdgeInsets = UIEdgeInsets(top: 35, left: 20, bottom: 35, right: 20)
+        languageButton.tintColor = AppTheme.DARK_GREEN
+        languageButton.addTarget(self, action: "changeLanguage:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(languageButton)
+        languageButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(self.view)
+            make.trailing.equalTo(self.view)
         }
         
         self.recorder = AudioRecorder()
         self.recorder.delegate = self
         
-        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
-        
-        let tap = UITapGestureRecognizer(target: self, action: "startStop")
-        self.view.addGestureRecognizer(tap)
+        self.speech = AudioToSpeech()
+        self.speech.delegate = self
     }
     
     func startStop() {
@@ -82,6 +101,15 @@ class MainViewController: UIViewController {
         } else {
             self.recorder.record()
         }
+    }
+    
+    func changeLanguage(button: UIButton) {
+        if self.speech.language == AudioToSpeechLanguage.Romană {
+            self.speech.language = AudioToSpeechLanguage.English
+        } else {
+            self.speech.language = AudioToSpeechLanguage.Romană
+        }
+        button.setTitle(String(self.speech.language), forState: UIControlState.Normal)
     }
     
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
@@ -95,29 +123,30 @@ class MainViewController: UIViewController {
 extension MainViewController: AudioRecorderDelegate {
     
     func didStartRecording(recorder: AudioRecorder) {
-        self.label.text = "Recording..."
+        self.recording = true
     }
     
     func didStopRecording(recorder: AudioRecorder) {
-        self.label.text = "Processing..."
-        Alamofire.upload(.POST, "https://www.google.com/speech-api/v2/recognize?output=json&lang=ro-ro&key=AIzaSyA3QauQzWiq8sNp-13WZVkv5MLHoehjkrM",
-            headers: ["Content-Type": "audio/l16; rate=16000;"], file: recorder.fileURL).responseString { (r) -> Void in
-                let index = r.result.value?.characters.indexOf("\n")
-                let x = r.result.value!.substringFromIndex(index!)
-                if let j = x.dataUsingEncoding(NSUTF8StringEncoding) {
-                    let json = JSON(data: j)
-                    let text = json["result", 0, "alternative", 0, "transcript"].stringValue
-                    self.label.text = text
-                }
-            }
+        self.recording = false
+        self.button.enabled = false
+        self.speech.sendAudio(recorder.fileURL)
     }
     
     func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat) {
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            var x = level * 3
-            if x > 1 { x = 1 }
-            self.sphereView.layer.mask?.transform = CATransform3DMakeScale(x, x, 1)
+            let scale = min(level * 4, 1)
+            self.sphereView.layer.mask?.transform = CATransform3DMakeScale(scale, scale, 1)
         })
+    }
+    
+}
+
+extension MainViewController: AudioToSpeechDelegate {
+    
+    func didReceiveAudioTranscript(transcript: String?) {
+        let alert = UIAlertController(title: nil, message: transcript, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cool, it works!", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 }
