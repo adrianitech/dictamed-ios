@@ -128,7 +128,6 @@ extension MainViewController: AudioRecorderDelegate {
     
     func didStopRecording(recorder: AudioRecorder) {
         self.recording = false
-        self.button.enabled = false
         self.speech.sendAudio(recorder.fileURL)
     }
     
