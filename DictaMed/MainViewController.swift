@@ -147,7 +147,7 @@ extension MainViewController: AudioToSpeechDelegate {
   
   func didReceiveAudioTranscript(transcript: String?) {
     //dictamed-web.herokuapp.com
-    Alamofire.request(.POST, "http://192.168.0.102:9000/api/translations",
+    Alamofire.request(.POST, "http://dictamed-web.herokuapp.com/api/translations",
       parameters: [
         "translation": transcript ?? ""
       ])
