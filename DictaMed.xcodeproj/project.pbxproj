@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2FB4491BCD82020028E845 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FB4481BCD82020028E845 /* AppTheme.swift */; settings = {ASSET_TAGS = (); }; };
-		3A2FB44C1BCD8B270028E845 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FB44B1BCD8B270028E845 /* AudioRecorder.swift */; settings = {ASSET_TAGS = (); }; };
+		3A2FB4491BCD82020028E845 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FB4481BCD82020028E845 /* AppTheme.swift */; };
+		3A2FB44C1BCD8B270028E845 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FB44B1BCD8B270028E845 /* AudioRecorder.swift */; };
 		3A4965011BC99E63005C8AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4965001BC99E63005C8AD7 /* AppDelegate.swift */; };
 		3A4965031BC99E63005C8AD7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4965021BC99E63005C8AD7 /* MainViewController.swift */; };
 		3A4965081BC99E63005C8AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4965071BC99E63005C8AD7 /* Assets.xcassets */; };
 		3A49650B1BC99E63005C8AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4965091BC99E63005C8AD7 /* LaunchScreen.storyboard */; };
-		3A95481C1BD29805009B160B /* AudioToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95481B1BD29805009B160B /* AudioToSpeech.swift */; settings = {ASSET_TAGS = (); }; };
-		E79D67DF2E9A5E8A9EAE0886 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3428ABF9EB886534FD3575E8 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3A95481C1BD29805009B160B /* AudioToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95481B1BD29805009B160B /* AudioToSpeech.swift */; };
+		E79D67DF2E9A5E8A9EAE0886 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3428ABF9EB886534FD3575E8 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
