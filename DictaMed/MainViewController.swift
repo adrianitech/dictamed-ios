@@ -32,18 +32,18 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = AppTheme.LIGHT_GREEN
+    self.view.backgroundColor = Color.backgroundColor
     
     let logo1 = UIImageView()
     logo1.image = UIImage(named: "ic_wave")
-    logo1.tintColor = AppTheme.DARK_GREEN
+    logo1.tintColor = Color.textColor
     self.view.addSubview(logo1)
     logo1.snp_makeConstraints { (make) -> Void in
       make.center.equalTo(self.view)
     }
     
     self.sphereView = UIView()
-    self.sphereView.backgroundColor = AppTheme.DARK_GREEN
+    self.sphereView.backgroundColor = Color.primaryColor
     self.view.addSubview(self.sphereView)
     self.sphereView.snp_makeConstraints { (make) -> Void in
       make.size.equalTo(CGSize(width: 300, height: 300))
@@ -59,16 +59,16 @@ class MainViewController: UIViewController {
     
     let logo2 = UIImageView()
     logo2.image = UIImage(named: "ic_wave")
-    logo2.tintColor = UIColor(red:0, green:1, blue:0.79, alpha:1)
+    logo2.tintColor = Color.backgroundColor
     self.sphereView.addSubview(logo2)
     logo2.snp_makeConstraints { (make) -> Void in
       make.center.equalTo(self.sphereView)
     }
     
-    self.button = UIButton()
+    self.button = UIButton(type: UIButtonType.System)
     self.button.setImage(UIImage(named: "ic_record"), forState: UIControlState.Normal)
     self.button.contentEdgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
-    self.button.tintColor = AppTheme.DARK_GREEN
+    self.button.tintColor = Color.textColor
     self.button.addTarget(self, action: "startStop", forControlEvents: UIControlEvents.TouchUpInside)
     self.view.addSubview(self.button)
     self.button.snp_makeConstraints { (make) -> Void in
@@ -76,12 +76,12 @@ class MainViewController: UIViewController {
       make.bottom.equalTo(self.view)
     }
     
-    let languageButton = UIButton()
+    let languageButton = UIButton(type: UIButtonType.System)
     languageButton.setTitle(String(AudioToSpeechLanguage.Romană), forState: UIControlState.Normal)
-    languageButton.setTitleColor(AppTheme.DARK_GREEN, forState: UIControlState.Normal)
+    languageButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
     languageButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
     languageButton.contentEdgeInsets = UIEdgeInsets(top: 35, left: 20, bottom: 35, right: 20)
-    languageButton.tintColor = AppTheme.DARK_GREEN
+    languageButton.tintColor = Color.primaryColor
     languageButton.addTarget(self, action: "changeLanguage:", forControlEvents: UIControlEvents.TouchUpInside)
     self.view.addSubview(languageButton)
     languageButton.snp_makeConstraints { (make) -> Void in
@@ -146,7 +146,7 @@ extension MainViewController: AudioRecorderDelegate {
 extension MainViewController: AudioToSpeechDelegate {
   
   func didReceiveAudioTranscript(transcript: String?) {
-    //dictamed-web.herokuapp.com
+    // htto://dictamed-web.herokuapp.com
     Alamofire.request(.POST, "http://dictamed-web.herokuapp.com/api/translations",
       parameters: [
         "translation": transcript ?? ""

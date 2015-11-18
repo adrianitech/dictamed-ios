@@ -8,10 +8,12 @@
 
 import UIKit
 
-class AppTheme {
-
-    static let DARK_GREEN = UIColor(red:0.22, green:0.78, blue:0.65, alpha:1)
-    
-    static let LIGHT_GREEN = UIColor(red:0, green:1, blue:0.79, alpha:1)
-    
+struct Color {
+  
+  static let backgroundColor = UIColor(red:1, green:1, blue:1, alpha:1)
+  
+  static let textColor = UIColor(red:0.68, green:0.71, blue:0.76, alpha:1)
+  
+  static let primaryColor = UIColor(red:0, green:0.79, blue:0.57, alpha:1)
+  
 }
