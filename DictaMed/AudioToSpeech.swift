@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 enum AudioToSpeechLanguage: String {
-  case Romană  = "ro-ro"
+  case Română  = "ro-ro"
   case English = "en-us"
 }
 
@@ -27,7 +27,7 @@ class AudioToSpeech {
   
   private let rootUrl = "https://www.google.com/speech-api/v2/recognize?output=json&lang=%@&key=%@"
   
-  var language = AudioToSpeechLanguage.Romană
+  var language = AudioToSpeechLanguage.Română
   
   var delegate: AudioToSpeechDelegate?
   

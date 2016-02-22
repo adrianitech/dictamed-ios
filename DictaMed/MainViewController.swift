@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-import Alamofire
+import SwiftDDP
 
 class MainViewController: UIViewController {
   
@@ -77,11 +77,11 @@ class MainViewController: UIViewController {
     }
     
     let languageButton = UIButton(type: UIButtonType.System)
-    languageButton.setTitle(String(AudioToSpeechLanguage.Romană), forState: UIControlState.Normal)
+    languageButton.setTitle(String(AudioToSpeechLanguage.Română), forState: UIControlState.Normal)
     languageButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
     languageButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
     languageButton.contentEdgeInsets = UIEdgeInsets(top: 35, left: 20, bottom: 35, right: 20)
-    languageButton.tintColor = Color.primaryColor
+    languageButton.tintColor = Color.textColor
     languageButton.addTarget(self, action: "changeLanguage:", forControlEvents: UIControlEvents.TouchUpInside)
     self.view.addSubview(languageButton)
     languageButton.snp_makeConstraints { (make) -> Void in
@@ -107,10 +107,10 @@ class MainViewController: UIViewController {
   }
   
   func changeLanguage(button: UIButton) {
-    if self.speech.language == AudioToSpeechLanguage.Romană {
+    if self.speech.language == AudioToSpeechLanguage.Română {
       self.speech.language = AudioToSpeechLanguage.English
     } else {
-      self.speech.language = AudioToSpeechLanguage.Romană
+      self.speech.language = AudioToSpeechLanguage.Română
     }
     button.setTitle(String(self.speech.language), forState: UIControlState.Normal)
   }
@@ -146,11 +146,9 @@ extension MainViewController: AudioRecorderDelegate {
 extension MainViewController: AudioToSpeechDelegate {
   
   func didReceiveAudioTranscript(transcript: String?) {
-    // htto://dictamed-web.herokuapp.com
-    Alamofire.request(.POST, "http://dictamed-web.herokuapp.com/api/translations",
-      parameters: [
-        "translation": transcript ?? ""
-      ])
+    Meteor.call("addTranslation",
+        params: [transcript ?? "Unknown", "Sent from my iPhone"],
+        callback: nil)
     
     let alert = UIAlertController(title: nil, message: transcript, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "Cool, it works!", style: UIAlertActionStyle.Cancel, handler: nil))

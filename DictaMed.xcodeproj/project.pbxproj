@@ -44,14 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A2FB44A1BCD82080028E845 /* Helper */ = {
+		3A2FB44A1BCD82080028E845 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				3A2FB4481BCD82020028E845 /* AppTheme.swift */,
 				3A2FB44B1BCD8B270028E845 /* AudioRecorder.swift */,
 				3A95481B1BD29805009B160B /* AudioToSpeech.swift */,
 			);
-			name = Helper;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		3A4964F41BC99E62005C8AD7 = {
@@ -75,7 +75,7 @@
 		3A4964FF1BC99E63005C8AD7 /* DictaMed */ = {
 			isa = PBXGroup;
 			children = (
-				3A2FB44A1BCD82080028E845 /* Helper */,
+				3A2FB44A1BCD82080028E845 /* Helpers */,
 				3A4965131BC99E94005C8AD7 /* Views */,
 				3A4965121BC99E89005C8AD7 /* Supporting Files */,
 			);
@@ -348,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DictaMed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ro.adrian.DictaMed;
+				PRODUCT_BUNDLE_IDENTIFIER = ro.adrian.Dictamed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -360,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DictaMed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ro.adrian.DictaMed;
+				PRODUCT_BUNDLE_IDENTIFIER = ro.adrian.Dictamed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
