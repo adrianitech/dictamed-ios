@@ -13,6 +13,16 @@
 		3A4965031BC99E63005C8AD7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4965021BC99E63005C8AD7 /* MainViewController.swift */; };
 		3A4965081BC99E63005C8AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4965071BC99E63005C8AD7 /* Assets.xcassets */; };
 		3A49650B1BC99E63005C8AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4965091BC99E63005C8AD7 /* LaunchScreen.storyboard */; };
+		3A6774261C7CC07C00C29371 /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6774201C7CC07C00C29371 /* CoreDataExtensions.swift */; };
+		3A6774271C7CC07C00C29371 /* MeteorCollectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6774211C7CC07C00C29371 /* MeteorCollectionChange.swift */; };
+		3A6774281C7CC07C00C29371 /* MeteorCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6774221C7CC07C00C29371 /* MeteorCoreData.swift */; };
+		3A6774291C7CC07C00C29371 /* MeteorCoreDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6774231C7CC07C00C29371 /* MeteorCoreDataCollection.swift */; };
+		3A67742A1C7CC07C00C29371 /* MeteorCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6774241C7CC07C00C29371 /* MeteorCoreDataStack.swift */; };
+		3A67742B1C7CC07C00C29371 /* MeteorCoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6774251C7CC07C00C29371 /* MeteorCoreDataTableViewController.swift */; };
+		3A67742E1C7CC09900C29371 /* MeteorCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A67742C1C7CC09900C29371 /* MeteorCoreData.xcdatamodeld */; };
+		3A6774301C7CC0E900C29371 /* MeteorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67742F1C7CC0E900C29371 /* MeteorAPI.swift */; };
+		3A916D751C7CC4E3005EE75E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A916D731C7CC4E3005EE75E /* Post.swift */; };
+		3A916D761C7CC4E3005EE75E /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A916D741C7CC4E3005EE75E /* Post+CoreDataProperties.swift */; };
 		3A95481C1BD29805009B160B /* AudioToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95481B1BD29805009B160B /* AudioToSpeech.swift */; };
 		E79D67DF2E9A5E8A9EAE0886 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3428ABF9EB886534FD3575E8 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -27,6 +37,16 @@
 		3A4965071BC99E63005C8AD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A49650A1BC99E63005C8AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A49650C1BC99E63005C8AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A6774201C7CC07C00C29371 /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
+		3A6774211C7CC07C00C29371 /* MeteorCollectionChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorCollectionChange.swift; sourceTree = "<group>"; };
+		3A6774221C7CC07C00C29371 /* MeteorCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorCoreData.swift; sourceTree = "<group>"; };
+		3A6774231C7CC07C00C29371 /* MeteorCoreDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorCoreDataCollection.swift; sourceTree = "<group>"; };
+		3A6774241C7CC07C00C29371 /* MeteorCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorCoreDataStack.swift; sourceTree = "<group>"; };
+		3A6774251C7CC07C00C29371 /* MeteorCoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorCoreDataTableViewController.swift; sourceTree = "<group>"; };
+		3A67742D1C7CC09900C29371 /* MeteorCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeteorCoreData.xcdatamodel; sourceTree = "<group>"; };
+		3A67742F1C7CC0E900C29371 /* MeteorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorAPI.swift; sourceTree = "<group>"; };
+		3A916D731C7CC4E3005EE75E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3A916D741C7CC4E3005EE75E /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3A95481B1BD29805009B160B /* AudioToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioToSpeech.swift; sourceTree = "<group>"; };
 		7BAFA586D36CE672C25889E8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AD34FAF8CDFF1B7EA089AF79 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4964FF1BC99E63005C8AD7 /* DictaMed */,
+				3A4965121BC99E89005C8AD7 /* Supporting Files */,
 				3A4964FE1BC99E62005C8AD7 /* Products */,
 				65945CFDDAD78C62E7A209A5 /* Pods */,
 				C353CC35145C044F7E17557D /* Frameworks */,
@@ -75,9 +96,9 @@
 		3A4964FF1BC99E63005C8AD7 /* DictaMed */ = {
 			isa = PBXGroup;
 			children = (
+				3A6774351C7CC36500C29371 /* API */,
 				3A2FB44A1BCD82080028E845 /* Helpers */,
 				3A4965131BC99E94005C8AD7 /* Views */,
-				3A4965121BC99E89005C8AD7 /* Supporting Files */,
 			);
 			path = DictaMed;
 			sourceTree = "<group>";
@@ -91,6 +112,7 @@
 				3A49650C1BC99E63005C8AD7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = DictaMed;
 			sourceTree = "<group>";
 		};
 		3A4965131BC99E94005C8AD7 /* Views */ = {
@@ -99,6 +121,39 @@
 				3A4965021BC99E63005C8AD7 /* MainViewController.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		3A6774351C7CC36500C29371 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3A6774361C7CC36C00C29371 /* CoreData */,
+				3A6774371C7CC37800C29371 /* Models */,
+				3A67742F1C7CC0E900C29371 /* MeteorAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		3A6774361C7CC36C00C29371 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3A6774201C7CC07C00C29371 /* CoreDataExtensions.swift */,
+				3A6774211C7CC07C00C29371 /* MeteorCollectionChange.swift */,
+				3A6774221C7CC07C00C29371 /* MeteorCoreData.swift */,
+				3A6774231C7CC07C00C29371 /* MeteorCoreDataCollection.swift */,
+				3A6774241C7CC07C00C29371 /* MeteorCoreDataStack.swift */,
+				3A6774251C7CC07C00C29371 /* MeteorCoreDataTableViewController.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		3A6774371C7CC37800C29371 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A67742C1C7CC09900C29371 /* MeteorCoreData.xcdatamodeld */,
+				3A916D731C7CC4E3005EE75E /* Post.swift */,
+				3A916D741C7CC4E3005EE75E /* Post+CoreDataProperties.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		65945CFDDAD78C62E7A209A5 /* Pods */ = {
@@ -239,10 +294,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2FB4491BCD82020028E845 /* AppTheme.swift in Sources */,
+				3A67742A1C7CC07C00C29371 /* MeteorCoreDataStack.swift in Sources */,
 				3A4965031BC99E63005C8AD7 /* MainViewController.swift in Sources */,
+				3A6774301C7CC0E900C29371 /* MeteorAPI.swift in Sources */,
+				3A6774261C7CC07C00C29371 /* CoreDataExtensions.swift in Sources */,
+				3A916D751C7CC4E3005EE75E /* Post.swift in Sources */,
 				3A95481C1BD29805009B160B /* AudioToSpeech.swift in Sources */,
 				3A2FB44C1BCD8B270028E845 /* AudioRecorder.swift in Sources */,
+				3A916D761C7CC4E3005EE75E /* Post+CoreDataProperties.swift in Sources */,
 				3A4965011BC99E63005C8AD7 /* AppDelegate.swift in Sources */,
+				3A67742B1C7CC07C00C29371 /* MeteorCoreDataTableViewController.swift in Sources */,
+				3A6774281C7CC07C00C29371 /* MeteorCoreData.swift in Sources */,
+				3A6774291C7CC07C00C29371 /* MeteorCoreDataCollection.swift in Sources */,
+				3A67742E1C7CC09900C29371 /* MeteorCoreData.xcdatamodeld in Sources */,
+				3A6774271C7CC07C00C29371 /* MeteorCollectionChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +452,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A67742C1C7CC09900C29371 /* MeteorCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A67742D1C7CC09900C29371 /* MeteorCoreData.xcdatamodel */,
+			);
+			currentVersion = 3A67742D1C7CC09900C29371 /* MeteorCoreData.xcdatamodel */;
+			path = MeteorCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A4964F51BC99E62005C8AD7 /* Project object */;
 }

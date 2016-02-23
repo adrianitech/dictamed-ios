@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
     languageButton.setTitle(String(AudioToSpeechLanguage.Română), forState: UIControlState.Normal)
     languageButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByClipping
     languageButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
-    languageButton.contentEdgeInsets = UIEdgeInsets(top: 35, left: 20, bottom: 35, right: 20)
+    languageButton.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 35, right: 20)
     languageButton.tintColor = Color.textColor
     languageButton.addTarget(self, action: "changeLanguage:", forControlEvents: UIControlEvents.TouchUpInside)
     self.view.addSubview(languageButton)
