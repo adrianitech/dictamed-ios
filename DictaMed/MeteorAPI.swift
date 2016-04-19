@@ -28,7 +28,7 @@ protocol MeteorAPILoginDelegate: MeteorAPIDelegate {
 class MeteorAPI: NSObject {
     
     // dictamed-web.heorkuapp.com
-    let baseSocket = "ws://192.168.0.101:3000/websocket"
+    let baseSocket = "ws://localhost:3000/websocket"
     
     static let sharedInstance = MeteorAPI()
     

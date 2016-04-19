@@ -1,15 +1,15 @@
 PODS:
-  - Alamofire (3.2.0)
-  - CryptoSwift (0.2.3)
-  - SnapKit (0.19.1)
+  - Alamofire (3.3.1)
+  - CryptoSwift (0.3.1)
+  - SnapKit (0.20.0)
   - SwiftDDP (0.1.9):
     - CryptoSwift
     - SwiftWebSocket
     - XCGLogger
-  - SwiftWebSocket (2.5.0)
+  - SwiftWebSocket (2.6.0)
   - SwiftyJSON (2.3.2)
   - WKAwesomeMenu (1.0.3)
-  - XCGLogger (3.2)
+  - XCGLogger (3.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -19,13 +19,13 @@ DEPENDENCIES:
   - WKAwesomeMenu
 
 SPEC CHECKSUMS:
-  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
-  CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
-  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  CryptoSwift: baf01e3fb3226c0155cd54c266be882b13d45d5e
+  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SwiftDDP: ed0cd4337cf114a646bc9bbcc7d806a4cee13a12
-  SwiftWebSocket: 168cbde980dc3b5bac925a3d8186f82b3e87768e
+  SwiftWebSocket: c24c0dde0b33852f478ffb54226408bfe703b26b
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   WKAwesomeMenu: 4a03c86d7a70a3545c6f0080554526023a49d59c
-  XCGLogger: da1f341f4bb8979db6e1df64232f04d9698402d4
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
 COCOAPODS: 0.39.0
