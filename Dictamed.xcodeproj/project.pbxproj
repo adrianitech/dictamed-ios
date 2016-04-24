@@ -19,6 +19,7 @@
 		3A77BE091CCCE52A002C9291 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */; };
 		3A77BE0B1CCCE52A002C9291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BE0F1CCCE52A002C9291 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A77BDF51CCCE52A002C9291 /* Watch.app */; };
+		3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */; };
 		4B536AEB1F639BC6A2F04F7D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A77BE0C1CCCE52A002C9291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
 		886B35E00C4671809ABE856F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 				3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */,
 				3A53ECCB1CCCD6EA00BB274E /* Info.plist */,
 				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
+				3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */,
 			);
 			path = Dictamed;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */,
 				3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */,
 				3A53ECD21CCCDB9700BB274E /* MainViewController.swift in Sources */,
 			);
