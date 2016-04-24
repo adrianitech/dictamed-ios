@@ -85,21 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
-  install_framework "Pods/CryptoSwift.framework"
-  install_framework "Pods/SnapKit.framework"
-  install_framework "Pods/SwiftDDP.framework"
-  install_framework "Pods/SwiftWebSocket.framework"
-  install_framework "Pods/SwiftyJSON.framework"
-  install_framework "Pods/WKAwesomeMenu.framework"
-  install_framework "Pods/XCGLogger.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
-  install_framework "Pods/CryptoSwift.framework"
-  install_framework "Pods/SnapKit.framework"
-  install_framework "Pods/SwiftDDP.framework"
-  install_framework "Pods/SwiftWebSocket.framework"
-  install_framework "Pods/SwiftyJSON.framework"
-  install_framework "Pods/WKAwesomeMenu.framework"
-  install_framework "Pods/XCGLogger.framework"
 fi
