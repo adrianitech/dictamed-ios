@@ -9,6 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var recorder: AudioRecorder!
 
     @IBOutlet weak var recordButton: UIButton!
     
@@ -16,45 +18,67 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var volumeView: UIView!
     
-    var time: Double = 0 {
-        didSet {
-            let date = NSDate(timeIntervalSince1970: self.time)
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "mm:ss"
-            self.timeLabel.text = dateFormatter.stringFromDate(date)
-        }
-    }
+    var startTime: NSTimeInterval = 0
     
     var isRecording = false {
         didSet {
             if isRecording {
                 self.recordButton.setTitle("STOP", forState: UIControlState.Normal)
-                self.timeLabel.text = "00:00"
-                
-                NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(MainViewController.vu), userInfo: nil, repeats: true)
-                
+                self.recorder.record()
             } else {
                 self.recordButton.setTitle("RECORD", forState: UIControlState.Normal)
                 self.timeLabel.text = ""
+                self.recorder.stopRecording()
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func vu() {
-        self.time = self.time + 1
         
-        let scale = CGFloat(arc4random_uniform(100)) / 100
-        UIView.animateWithDuration(0.5) { 
-            self.volumeView.transform = CGAffineTransformMakeScale(scale, scale)
-        }
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_back")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_back")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
+        self.volumeView.transform = CGAffineTransformMakeScale(0, 0)
+        
+        self.recorder = AudioRecorder()
+        self.recorder.delegate = self
     }
 
     @IBAction func record(sender: AnyObject) {
         self.isRecording = !self.isRecording
+    }
+    
+}
+
+extension MainViewController: AudioRecorderDelegate {
+    
+    func setTime() {
+        let diff = NSDate().timeIntervalSince1970 - self.startTime
+        let date = NSDate(timeIntervalSince1970: diff)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "mm:ss"
+        
+        self.timeLabel.text = dateFormatter.stringFromDate(date)
+    }
+    
+    func didStartRecording(recorder: AudioRecorder) {
+        self.startTime = NSDate().timeIntervalSince1970
+    }
+    
+    func didStopRecording(recorder: AudioRecorder) {
+        DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (text) in
+            DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone)
+        }
+    }
+    
+    func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat) {
+        self.setTime()
+        UIView.animateWithDuration(0.2) {
+            self.volumeView.transform = CGAffineTransformMakeScale(level, level)
+        }
     }
     
 }

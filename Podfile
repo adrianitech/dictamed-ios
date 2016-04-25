@@ -1,3 +1,16 @@
 use_frameworks!
 
-pod 'Alamofire'
+def common_pods
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+end
+
+target 'Dictamed' do
+    platform :ios, '9.0'
+    common_pods
+end
+
+target 'Watch Extension' do
+    platform :watchos, '2.0'
+    common_pods
+end

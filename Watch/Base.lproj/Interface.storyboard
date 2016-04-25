@@ -8,8 +8,31 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="PNk-eo-n4R">
+                            <items>
+                                <imageView alignment="left" image="ic_logo" id="U4a-Xe-9Ko"/>
+                                <label alignment="center" verticalAlignment="center" id="XJn-iX-bU8">
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="RECORD" id="19M-K7-stN">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                    <connections>
+                                        <action selector="record" destination="AgC-eL-Hgc" id="zVB-Tl-B0k"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="10" right="10" top="15" bottom="10"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="statusLabel" destination="XJn-iX-bU8" id="53L-Ll-k3f"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="780" y="526"/>
         </scene>
     </scenes>
 </document>

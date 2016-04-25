@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20304E9B8B5C90A8F8BF29C0 /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */; };
 		3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */; };
 		3A53ECC51CCCD6EA00BB274E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC31CCCD6EA00BB274E /* Main.storyboard */; };
 		3A53ECC71CCCD6EA00BB274E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A53ECCA1CCCD6EA00BB274E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */; };
 		3A53ECD21CCCDB9700BB274E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53ECD11CCCDB9700BB274E /* MainViewController.swift */; };
+		3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */; };
+		3A6FC1E51CCE16A3000EA167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A77BDF91CCCE52A002C9291 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDF71CCCE52A002C9291 /* Interface.storyboard */; };
 		3A77BDFB1CCCE52A002C9291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BE021CCCE52A002C9291 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A77BE011CCCE52A002C9291 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -19,8 +22,10 @@
 		3A77BE091CCCE52A002C9291 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */; };
 		3A77BE0B1CCCE52A002C9291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BE0F1CCCE52A002C9291 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A77BDF51CCCE52A002C9291 /* Watch.app */; };
+		3A7A15651CCE879800B8515E /* DictamedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */; };
+		3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */; };
 		3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */; };
-		4B536AEB1F639BC6A2F04F7D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */; };
+		B562BA87BC16EDE9F54394AC /* Pods_Dictamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E13CE1A3DE74FE419BDC0AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A53ECBC1CCCD6EA00BB274E /* Dictamed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictamed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A53ECC41CCCD6EA00BB274E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +79,9 @@
 		3A53ECC91CCCD6EA00BB274E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A53ECCB1CCCD6EA00BB274E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A53ECD11CCCDB9700BB274E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		3A6FC1E31CCE142C000EA167 /* Dictamed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dictamed.entitlements; sourceTree = "<group>"; };
+		3A6FC1E41CCE152F000EA167 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		3A77BDF51CCCE52A002C9291 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A77BDF81CCCE52A002C9291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,9 +91,14 @@
 		3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A77BE0C1CCCE52A002C9291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictamedAPI.swift; sourceTree = "<group>"; };
 		3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
-		886B35E00C4671809ABE856F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dictamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		C1A4252048175AE1B4382660 /* Pods-Dictamed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictamed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed.release.xcconfig"; sourceTree = "<group>"; };
 		CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6AFF788E8C48B9EDD1F50C0 /* Pods-Dictamed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictamed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +106,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B536AEB1F639BC6A2F04F7D /* Pods.framework in Frameworks */,
+				B562BA87BC16EDE9F54394AC /* Pods_Dictamed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3A77BDFE1CCCE52A002C9291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20304E9B8B5C90A8F8BF29C0 /* Pods_Watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5696E94E0255B02D042259B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -111,8 +132,21 @@
 			isa = PBXGroup;
 			children = (
 				CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */,
+				6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */,
+				1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		377B8718AD82C0C49848A82E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6AFF788E8C48B9EDD1F50C0 /* Pods-Dictamed.debug.xcconfig */,
+				C1A4252048175AE1B4382660 /* Pods-Dictamed.release.xcconfig */,
+				83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */,
+				A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		3A53ECB31CCCD6EA00BB274E = {
@@ -122,8 +156,8 @@
 				3A77BDF61CCCE52A002C9291 /* Watch */,
 				3A77BE051CCCE52A002C9291 /* Watch Extension */,
 				3A53ECBD1CCCD6EA00BB274E /* Products */,
-				81B7FBA03A64946CB2A55CA7 /* Pods */,
 				33E3BD1AE0AD107745117A3D /* Frameworks */,
+				377B8718AD82C0C49848A82E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +175,15 @@
 			isa = PBXGroup;
 			children = (
 				3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */,
-				3A53ECC31CCCD6EA00BB274E /* Main.storyboard */,
 				3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */,
-				3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */,
-				3A53ECCB1CCCD6EA00BB274E /* Info.plist */,
-				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
+				3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */,
+				3A6FC1E31CCE142C000EA167 /* Dictamed.entitlements */,
 				3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */,
+				3A53ECCB1CCCD6EA00BB274E /* Info.plist */,
+				3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */,
+				3A53ECC31CCCD6EA00BB274E /* Main.storyboard */,
+				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
+				3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */,
 			);
 			path = Dictamed;
 			sourceTree = "<group>";
@@ -154,9 +191,9 @@
 		3A77BDF61CCCE52A002C9291 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
-				3A77BDF71CCCE52A002C9291 /* Interface.storyboard */,
 				3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */,
 				3A77BDFC1CCCE52A002C9291 /* Info.plist */,
+				3A77BDF71CCCE52A002C9291 /* Interface.storyboard */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -164,21 +201,13 @@
 		3A77BE051CCCE52A002C9291 /* Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3A77BE061CCCE52A002C9291 /* InterfaceController.swift */,
-				3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */,
 				3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */,
+				3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */,
 				3A77BE0C1CCCE52A002C9291 /* Info.plist */,
+				3A77BE061CCCE52A002C9291 /* InterfaceController.swift */,
+				3A6FC1E41CCE152F000EA167 /* Watch Extension.entitlements */,
 			);
 			path = "Watch Extension";
-			sourceTree = "<group>";
-		};
-		81B7FBA03A64946CB2A55CA7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0E13CE1A3DE74FE419BDC0AA /* Pods.debug.xcconfig */,
-				886B35E00C4671809ABE856F /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,13 +217,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A53ECCE1CCCD6EA00BB274E /* Build configuration list for PBXNativeTarget "Dictamed" */;
 			buildPhases = (
-				AF4A7A2A39B6EC045EA78EDA /* Check Pods Manifest.lock */,
+				A34E40200AD4E506B8168065 /* Check Pods Manifest.lock */,
 				3A53ECB81CCCD6EA00BB274E /* Sources */,
 				3A53ECB91CCCD6EA00BB274E /* Frameworks */,
 				3A53ECBA1CCCD6EA00BB274E /* Resources */,
-				3255A56F31492A85BB5E2AA0 /* Embed Pods Frameworks */,
-				3B56273E5449A5B57AB63A8A /* Copy Pods Resources */,
 				3A77BE171CCCE52A002C9291 /* Embed Watch Content */,
+				9C4CE4C8A0805F327406030D /* Embed Pods Frameworks */,
+				1371B40E6D65FBF85F6EA3A4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,6 +241,7 @@
 			buildPhases = (
 				3A77BDF31CCCE52A002C9291 /* Resources */,
 				3A77BE151CCCE52A002C9291 /* Embed App Extensions */,
+				5696E94E0255B02D042259B8 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A77BE141CCCE52A002C9291 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
 			buildPhases = (
+				51CF0ADEBEE9870CC4C0AE51 /* Check Pods Manifest.lock */,
 				3A77BDFD1CCCE52A002C9291 /* Sources */,
 				3A77BDFE1CCCE52A002C9291 /* Frameworks */,
 				3A77BDFF1CCCE52A002C9291 /* Resources */,
+				58C7B40DD1116F185CD4DC5F /* Embed Pods Frameworks */,
+				DCF74260CC88EE24ED6E9A67 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +286,11 @@
 					3A53ECBB1CCCD6EA00BB274E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = HGQ4BRJQEM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3A77BDF41CCCE52A002C9291 = {
 						CreatedOnToolsVersion = 7.3;
@@ -261,6 +299,11 @@
 					3A77BE001CCCE52A002C9291 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = HGQ4BRJQEM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -300,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A77BDFB1CCCE52A002C9291 /* Assets.xcassets in Resources */,
+				3A6FC1E51CCE16A3000EA167 /* Assets.xcassets in Resources */,
 				3A77BDF91CCCE52A002C9291 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,22 +359,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3255A56F31492A85BB5E2AA0 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B56273E5449A5B57AB63A8A /* Copy Pods Resources */ = {
+		1371B40E6D65FBF85F6EA3A4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,10 +371,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF4A7A2A39B6EC045EA78EDA /* Check Pods Manifest.lock */ = {
+		51CF0ADEBEE9870CC4C0AE51 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,6 +389,66 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		58C7B40DD1116F185CD4DC5F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C4CE4C8A0805F327406030D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A34E40200AD4E506B8168065 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF74260CC88EE24ED6E9A67 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -368,7 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */,
+				3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */,
 				3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */,
+				3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */,
 				3A53ECD21CCCDB9700BB274E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A77BE091CCCE52A002C9291 /* ExtensionDelegate.swift in Sources */,
+				3A7A15651CCE879800B8515E /* DictamedAPI.swift in Sources */,
 				3A77BE071CCCE52A002C9291 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,27 +602,33 @@
 		};
 		3A53ECCF1CCCD6EA00BB274E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E13CE1A3DE74FE419BDC0AA /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E6AFF788E8C48B9EDD1F50C0 /* Pods-Dictamed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dictamed/Dictamed.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Dictamed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dictamed.Dictamed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		3A53ECD01CCCD6EA00BB274E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 886B35E00C4671809ABE856F /* Pods.release.xcconfig */;
+			baseConfigurationReference = C1A4252048175AE1B4382660 /* Pods-Dictamed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dictamed/Dictamed.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Dictamed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dictamed.Dictamed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -570,7 +668,9 @@
 		};
 		3A77BE121CCCE52A002C9291 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -585,7 +685,9 @@
 		};
 		3A77BE131CCCE52A002C9291 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
