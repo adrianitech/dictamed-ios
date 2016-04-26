@@ -44,6 +44,18 @@ class DocumentsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        if self.validItems.count == 0 && self.pendingItems.count == 0 {
+            let label = UILabel()
+            label.numberOfLines = 0
+            label.textAlignment = NSTextAlignment.Center
+            label.textColor = UIColor(red:0.48,green:0.49,blue:0.51,alpha:1.00)
+            label.text = "Start recording\nto see your document here"
+            tableView.backgroundView = label
+        } else {
+            tableView.backgroundView = nil
+        }
+        
         return 2
     }
 
@@ -68,8 +80,9 @@ class DocumentsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 { return "Validated" }
-        return "Pending"
+        if section == 0 && self.validItems.count > 0 { return "Validated" }
+        if section == 1 && self.pendingItems.count > 0 { return "Pending" }
+        return ""
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
