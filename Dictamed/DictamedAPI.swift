@@ -29,7 +29,11 @@ class DictamedAPI {
     
     private let speechAPIURL = "https://www.google.com/speech-api/v2/recognize?output=json&lang=%@&key=%@"
     
-    private let websiteAPIURL = "http://192.168.1.41:3000"
+    #if DEBUG
+    private let websiteAPIURL = "http://192.168.1.2:3000"
+    #else
+    private let websiteAPIURL = "http://dictamed-web-develop.herokuapp.com"
+    #endif
     
     func transcribeAudio(file: NSURL, language: AudioLanguage, callback: (String?) -> Void) {
         let url = String(format: self.speechAPIURL, language.rawValue, self.speechAPIKey)
@@ -74,14 +78,28 @@ class DictamedAPI {
         }
     }
     
-    func getAllPosts(callback: ([AnyObject]) -> Void) {
+    func getAllPosts(callback: ([TranscriptModel]) -> Void) {
         let url = websiteAPIURL + "/api/transcripts"
         Alamofire.request(.GET, url).responseJSON { (res) in
             switch res.result {
             case .Failure:
                 callback([])
+            case .Success(let value):
+                print(value)
+                let data = value.valueForKey("data") as! [NSDictionary]
+                callback(data.map { TranscriptModel(dict: $0) })
+            }
+        }
+    }
+    
+    func deletePost(id: String, callback: () -> Void) {
+        let url = websiteAPIURL + "/api/transcripts/" + id
+        Alamofire.request(.DELETE, url).responseJSON { (res) in
+            switch res.result {
+            case .Failure(let error):
+                print(error)
             case .Success:
-                callback([])
+                callback()
             }
         }
     }

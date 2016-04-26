@@ -55,6 +55,8 @@ class MainViewController: UIViewController {
 extension MainViewController: AudioRecorderDelegate {
     
     func setTime() {
+        if !self.recorder.recording { return }
+        
         let diff = NSDate().timeIntervalSince1970 - self.startTime
         let date = NSDate(timeIntervalSince1970: diff)
         

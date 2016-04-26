@@ -94,16 +94,16 @@
         <scene sceneID="5X8-uc-gYi">
             <objects>
                 <tableViewController id="19c-eS-ZDG" customClass="DocumentsTableViewController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="qzk-ed-Nfb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="qzk-ed-Nfb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="GVq-zg-z86" customClass="DocumentsTableViewCell" customModule="Dictamed" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="GVq-zg-z86" customClass="DocumentsTableViewCell" customModule="Dictamed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GVq-zg-z86" id="uEt-NZ-iDf">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-rd-riV">
@@ -113,7 +113,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFo-CR-I0K">
-                                            <rect key="frame" x="15" y="35" width="537" height="104"/>
+                                            <rect key="frame" x="15" y="40" width="570" height="83"/>
                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -121,9 +121,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="dFo-CR-I0K" secondAttribute="bottom" constant="10" id="5Lp-PS-lxY"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dFo-CR-I0K" secondAttribute="bottom" constant="10" id="5Lp-PS-lxY"/>
                                         <constraint firstItem="UKz-rd-riV" firstAttribute="top" secondItem="uEt-NZ-iDf" secondAttribute="top" constant="15" id="HZA-Ql-3M2"/>
-                                        <constraint firstItem="dFo-CR-I0K" firstAttribute="top" secondItem="UKz-rd-riV" secondAttribute="bottom" id="MmI-hv-SFz"/>
+                                        <constraint firstItem="dFo-CR-I0K" firstAttribute="top" secondItem="UKz-rd-riV" secondAttribute="bottom" constant="5" id="MmI-hv-SFz"/>
                                         <constraint firstItem="UKz-rd-riV" firstAttribute="leading" secondItem="uEt-NZ-iDf" secondAttribute="leading" constant="15" id="Mrx-9D-LyW"/>
                                         <constraint firstItem="dFo-CR-I0K" firstAttribute="leading" secondItem="uEt-NZ-iDf" secondAttribute="leading" constant="15" id="xDU-gr-JnB"/>
                                         <constraint firstAttribute="trailing" secondItem="dFo-CR-I0K" secondAttribute="trailing" constant="15" id="zor-6H-DIx"/>

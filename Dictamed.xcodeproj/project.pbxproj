@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20304E9B8B5C90A8F8BF29C0 /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */; };
+		3A441E031CCF649A008250A8 /* TranscriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A441E021CCF649A008250A8 /* TranscriptModel.swift */; };
+		3A441E041CCF657E008250A8 /* TranscriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A441E021CCF649A008250A8 /* TranscriptModel.swift */; };
 		3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */; };
 		3A53ECC51CCCD6EA00BB274E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC31CCCD6EA00BB274E /* Main.storyboard */; };
 		3A53ECC71CCCD6EA00BB274E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
@@ -72,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A441E021CCF649A008250A8 /* TranscriptModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptModel.swift; sourceTree = "<group>"; };
 		3A53ECBC1CCCD6EA00BB274E /* Dictamed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictamed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A53ECC41CCCD6EA00BB274E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +152,53 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3A441E051CCF6596008250A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */,
+				3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */,
+				3A6FC1E31CCE142C000EA167 /* Dictamed.entitlements */,
+				3A53ECCB1CCCD6EA00BB274E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A441E061CCF65A2008250A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */,
+				3A53ECC31CCCD6EA00BB274E /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3A441E071CCF65AA008250A8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
+				3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3A441E081CCF65B0008250A8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3A441E091CCF65C7008250A8 /* Models */,
+				3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */,
+				3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		3A441E091CCF65C7008250A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A441E021CCF649A008250A8 /* TranscriptModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		3A53ECB31CCCD6EA00BB274E = {
 			isa = PBXGroup;
 			children = (
@@ -174,16 +224,10 @@
 		3A53ECBE1CCCD6EA00BB274E /* Dictamed */ = {
 			isa = PBXGroup;
 			children = (
-				3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */,
-				3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */,
-				3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */,
-				3A6FC1E31CCE142C000EA167 /* Dictamed.entitlements */,
-				3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */,
-				3A53ECCB1CCCD6EA00BB274E /* Info.plist */,
-				3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */,
-				3A53ECC31CCCD6EA00BB274E /* Main.storyboard */,
-				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
-				3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */,
+				3A441E061CCF65A2008250A8 /* Views */,
+				3A441E071CCF65AA008250A8 /* Controllers */,
+				3A441E081CCF65B0008250A8 /* API */,
+				3A441E051CCF6596008250A8 /* Supporting Files */,
 			);
 			path = Dictamed;
 			sourceTree = "<group>";
@@ -457,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */,
+				3A441E031CCF649A008250A8 /* TranscriptModel.swift in Sources */,
 				3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */,
 				3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */,
 				3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */,
@@ -471,6 +516,7 @@
 				3A77BE091CCCE52A002C9291 /* ExtensionDelegate.swift in Sources */,
 				3A7A15651CCE879800B8515E /* DictamedAPI.swift in Sources */,
 				3A77BE071CCCE52A002C9291 /* InterfaceController.swift in Sources */,
+				3A441E041CCF657E008250A8 /* TranscriptModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +603,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "\"-D\" \"DEBUG\"";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -595,6 +642,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "\"-D\" \"RELEASE\"";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
