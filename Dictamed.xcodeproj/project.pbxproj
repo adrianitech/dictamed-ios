@@ -246,9 +246,9 @@
 			isa = PBXGroup;
 			children = (
 				3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */,
+				3A77BE061CCCE52A002C9291 /* InterfaceController.swift */,
 				3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */,
 				3A77BE0C1CCCE52A002C9291 /* Info.plist */,
-				3A77BE061CCCE52A002C9291 /* InterfaceController.swift */,
 				3A6FC1E41CCE152F000EA167 /* Watch Extension.entitlements */,
 			);
 			path = "Watch Extension";

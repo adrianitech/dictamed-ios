@@ -30,7 +30,7 @@ class DictamedAPI {
     private let speechAPIURL = "https://www.google.com/speech-api/v2/recognize?output=json&lang=%@&key=%@"
     
     #if DEBUG
-    private let websiteAPIURL = "http://192.168.1.2:3000"
+    private let websiteAPIURL = "http://192.168.1.45:3000"
     #else
     private let websiteAPIURL = "http://dictamed-web-develop.herokuapp.com"
     #endif
@@ -71,7 +71,14 @@ class DictamedAPI {
                         multipartFormData: { (form) in
                             form.appendBodyPart(fileURL: file, name: "audio")
                     }) { (result) in
-                        callback?()
+                        switch result {
+                        case .Failure(let error):
+                            print(error)
+                        case .Success(let request):
+                            request.request.response(completionHandler: { (_, _, _, _) in
+                                callback?()
+                            })
+                        }
                     }
                 }
             }

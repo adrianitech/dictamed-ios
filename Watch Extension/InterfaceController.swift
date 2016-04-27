@@ -47,8 +47,9 @@ class InterfaceController: WKInterfaceController {
             }
 
             if saved {
-                self.statusLabel.setText("Uploading...")
+                self.statusLabel.setText("Transcribing...")
                 DictamedAPI.sharedInstance.transcribeAudio(URL!, language: AudioLanguage.Romana, callback: { (text) in
+                    self.statusLabel.setText("Uploading...")
                     DictamedAPI.sharedInstance.submitAudio(URL!, translation: text, device: DictamedDeviceType.Watch) {
                         self.statusLabel.setText("")
                     }
