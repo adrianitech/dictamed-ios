@@ -20,6 +20,8 @@ class UploadInterfaceController: WKInterfaceController {
     
     private var URL: NSURL!
     
+    private var uploading: Bool = false
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         self.URL = context as! NSURL
@@ -29,14 +31,17 @@ class UploadInterfaceController: WKInterfaceController {
         self.loadingIndicator = EMTLoadingIndicator(
             interfaceController: self,
             interfaceImage: self.loaderImage,
-            width: 40, height: 40,
+            width: 60, height: 60,
             style: EMTLoadingIndicatorWaitStyle.Line)
         self.loadingIndicator.prepareImagesForProgress()
         self.loadingIndicator.showProgress(startPercentage: 0)
         
         super.willActivate()
         
-        self.upload(self.URL)
+        if !self.uploading {
+            self.uploading = true
+            self.upload(self.URL)
+        }
     }
 
     override func didDeactivate() {
@@ -55,7 +60,7 @@ class UploadInterfaceController: WKInterfaceController {
                     if !finished2 {
                         self.loadingIndicator.updateProgress(percentage: 50 + progress2 * 50)
                     } else {
-                        self.dismissController()
+                        WKInterfaceController.reloadRootControllersWithNames(["Page1"], contexts: nil)
                     }
                 }
             }
