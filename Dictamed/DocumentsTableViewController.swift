@@ -49,7 +49,7 @@ class DocumentsTableViewController: UITableViewController {
             let label = UILabel()
             label.numberOfLines = 0
             label.textAlignment = NSTextAlignment.Center
-            label.textColor = UIColor(red:0.48,green:0.49,blue:0.51,alpha:1.00)
+            label.textColor = UIColor(red:0.7,green:0.7,blue:0.7,alpha:1.00)
             label.text = "Start recording\nto see your document here"
             tableView.backgroundView = label
         } else {
@@ -89,33 +89,44 @@ class DocumentsTableViewController: UITableViewController {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            var item: TranscriptModel
-            
-            if indexPath.section == 0 { item = self.validItems[indexPath.row] }
-            else { item = self.pendingItems[indexPath.row] }
-            
-            DictamedAPI.sharedInstance.deletePost(item.id, callback: {
-                let index1 = self.validItems.indexOf { $0.id == item.id }
-                let index2 = self.pendingItems.indexOf { $0.id == item.id }
-                
-                tableView.beginUpdates()
-                
-                if let index1 = index1 {
-                    self.validItems.removeAtIndex(index1)
-                    tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index1, inSection: 0)],
-                        withRowAnimation: UITableViewRowAnimation.None)
-                }
-                if let index2 = index2 {
-                    self.pendingItems.removeAtIndex(index2)
-                    tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index2, inSection: 1)],
-                        withRowAnimation: UITableViewRowAnimation.None)
-                }
-                
-                tableView.endUpdates()
-            })
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let printAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Print") { (action, indexPath) in
+            //
         }
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (action, indexPath) in
+            self.deleteRow(tableView, indexPath: indexPath)
+        }
+        
+        printAction.backgroundColor = UIColor(red:0.35,green:0.55,blue:0.92,alpha:1.00)
+        
+        return [deleteAction, printAction]
+    }
+    
+    func deleteRow(tableView: UITableView, indexPath: NSIndexPath) {
+        var item: TranscriptModel
+        
+        if indexPath.section == 0 { item = self.validItems[indexPath.row] }
+        else { item = self.pendingItems[indexPath.row] }
+        
+        DictamedAPI.sharedInstance.deletePost(item.id, callback: {
+            let index1 = self.validItems.indexOf { $0.id == item.id }
+            let index2 = self.pendingItems.indexOf { $0.id == item.id }
+            
+            tableView.beginUpdates()
+            
+            if let index1 = index1 {
+                self.validItems.removeAtIndex(index1)
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index1, inSection: 0)],
+                    withRowAnimation: UITableViewRowAnimation.None)
+            }
+            if let index2 = index2 {
+                self.pendingItems.removeAtIndex(index2)
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index2, inSection: 1)],
+                    withRowAnimation: UITableViewRowAnimation.None)
+            }
+            
+            tableView.endUpdates()
+        })
     }
 
 }

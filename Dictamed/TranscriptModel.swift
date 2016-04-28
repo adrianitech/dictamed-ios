@@ -18,11 +18,18 @@ class TranscriptModel {
     
     var validated: Bool = false
     
+    var audio: String!
+    
+    var audioURL: NSURL {
+        return NSURL(string: DictamedAPI.sharedInstance.websiteAPIURL + self.audio)!
+    }
+    
     init(dict: NSDictionary) {
         self.id = dict.valueForKey("_id") as! String
         self.title = dict.valueForKey("title") as! String
         self.translation = dict.valueForKey("translation") as! String
         self.validated = dict.valueForKey("validated") as? Bool ?? false
+        self.audio = dict.valueForKey("audio") as! String
     }
     
 }

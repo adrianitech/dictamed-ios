@@ -30,9 +30,9 @@ class DictamedAPI {
     private let speechAPIURL = "https://www.google.com/speech-api/v2/recognize?output=json&lang=%@&key=%@"
     
     #if DEBUG
-    private let websiteAPIURL = "http://192.168.1.45:3000"
+    let websiteAPIURL = "http://192.168.1.45:3000"
     #else
-    private let websiteAPIURL = "http://dictamed-web-develop.herokuapp.com"
+    let websiteAPIURL = "http://dictamed-web-develop.herokuapp.com"
     #endif
     
     func transcribeAudio(file: NSURL, language: AudioLanguage, callback: (String?) -> Void) {

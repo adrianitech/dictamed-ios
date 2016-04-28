@@ -48,6 +48,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="uea-2N-Ody" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8wm-G4-OOp"/>
                             <constraint firstItem="uea-2N-Ody" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="Fkk-VI-4rW"/>
@@ -56,6 +57,9 @@
                             <constraint firstItem="2Xe-0w-XYg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hTb-Sp-EzS"/>
                             <constraint firstItem="2Xe-0w-XYg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iuX-lK-Dtc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hWC-hZ-rrf" appends="YES" id="8R6-0q-tAA"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fBG-Bx-xk7">
                         <nil key="title"/>
@@ -87,6 +91,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="hWC-hZ-rrf">
+                    <connections>
+                        <segue destination="19c-eS-ZDG" kind="show" id="tOr-Pr-m20"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1507" y="477"/>
         </scene>
@@ -97,7 +106,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="qzk-ed-Nfb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="GVq-zg-z86" customClass="DocumentsTableViewCell" customModule="Dictamed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="600" height="150"/>
@@ -116,7 +125,7 @@
                                             <rect key="frame" x="15" y="40" width="570" height="83"/>
                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -168,5 +177,8 @@
     <resources>
         <image name="ic_logo" width="393" height="49"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tOr-Pr-m20"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -116,7 +116,7 @@ class AudioRecorder: NSObject {
         if self.recorder.recording {
             self.recorder.updateMeters()
             let decibels = self.recorder.averagePowerForChannel(0)
-            let linear = CGFloat(pow(10, decibels / 20))
+            let linear = min(1, CGFloat(pow(10, decibels / 20)) * 3)
             self.delegate?.didReceiveAudioLevel(self, level: linear)
         }
         
