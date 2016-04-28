@@ -5,20 +5,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Page1-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                <controller identifier="Page1" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="PNk-eo-n4R">
                             <items>
                                 <imageView alignment="left" image="ic_logo" id="U4a-Xe-9Ko"/>
-                                <label alignment="center" verticalAlignment="center" id="XJn-iX-bU8">
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
-                                <button width="1" alignment="left" verticalAlignment="bottom" title="RECORD" id="19M-K7-stN">
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                <button alignment="left" verticalAlignment="bottom" id="19M-K7-stN">
+                                    <group key="contentGroup" width="1" alignment="left" spacing="5" id="1dm-AF-vbU">
+                                        <items>
+                                            <imageView alignment="center" verticalAlignment="center" image="ic_record" id="JUO-Yt-Bgi"/>
+                                            <label alignment="center" verticalAlignment="center" text="Record" id="eDV-9G-11P">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <edgeInsets key="margins" left="10" right="10" top="12" bottom="12"/>
+                                    </group>
                                     <connections>
                                         <action selector="record" destination="AgC-eL-Hgc" id="zVB-Tl-B0k"/>
                                     </connections>
@@ -27,12 +32,31 @@
                             <edgeInsets key="margins" left="10" right="10" top="15" bottom="10"/>
                         </group>
                     </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="974" y="653"/>
+        </scene>
+        <!--Page2-->
+        <scene sceneID="C19-tg-Qh0">
+            <objects>
+                <controller identifier="Page2" id="Wu0-7u-3Dk" customClass="UploadInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="10" id="sqY-Nl-TVg">
+                            <items>
+                                <imageView alignment="center" verticalAlignment="center" contentMode="center" id="NA0-D2-Zlu"/>
+                                <label alignment="center" verticalAlignment="center" id="KL3-K0-XJM">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
                     <connections>
-                        <outlet property="statusLabel" destination="XJn-iX-bU8" id="53L-Ll-k3f"/>
+                        <outlet property="loaderImage" destination="NA0-D2-Zlu" id="sd8-cT-bPK"/>
+                        <outlet property="statusLabel" destination="KL3-K0-XJM" id="S72-PT-mZ2"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="780" y="526"/>
+            <point key="canvasLocation" x="1238" y="653"/>
         </scene>
     </scenes>
 </document>

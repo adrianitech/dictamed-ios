@@ -13,4 +13,5 @@ end
 target 'Watch Extension' do
     platform :watchos, '2.0'
     common_pods
+    pod 'EMTLoadingIndicator'
 end

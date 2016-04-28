@@ -72,9 +72,9 @@ extension MainViewController: AudioRecorderDelegate {
     
     func didStopRecording(recorder: AudioRecorder) {
         self.timeLabel.text = "Transcribing..."
-        DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (text) in
+        DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (_, _, text) in
             self.timeLabel.text = "Uploading..."
-            DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) {
+            DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) { (_, _) in
                 self.timeLabel.text = ""
             }
         }

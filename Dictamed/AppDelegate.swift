@@ -30,8 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: WCSessionDelegate {
     
     func session(session: WCSession, didReceiveFile file: WCSessionFile) {
-        DictamedAPI.sharedInstance.transcribeAudio(file.fileURL, language: AudioLanguage.Romana) { (text) in
-            DictamedAPI.sharedInstance.submitAudio(file.fileURL, translation: text, device: DictamedDeviceType.Watch)
+        DictamedAPI.sharedInstance.transcribeAudio(file.fileURL, language: AudioLanguage.Romana) { (_, _, text) in
+            DictamedAPI.sharedInstance.submitAudio(file.fileURL, translation: text, device: DictamedDeviceType.Watch) { (_, _) in
+                //
+            }
         }
     }
     
