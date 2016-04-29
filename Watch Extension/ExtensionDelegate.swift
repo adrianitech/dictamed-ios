@@ -11,7 +11,7 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        //
+        WKInterfaceController.reloadRootControllersWithNames(["Page1", "Page2"], contexts: nil)
     }
 
     func applicationDidBecomeActive() {

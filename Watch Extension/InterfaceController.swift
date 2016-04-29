@@ -37,7 +37,7 @@ class InterfaceController: WKInterfaceController {
             }
 
             if saved {
-                WKInterfaceController.reloadRootControllersWithNames(["Page2"], contexts: [URL!])
+                self.presentControllerWithName("Page3", context: URL!)
             }
         })
     }

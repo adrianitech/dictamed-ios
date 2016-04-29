@@ -1,45 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1ar-qG-kpM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Page1-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller identifier="Page1" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
-                    <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="PNk-eo-n4R">
-                            <items>
-                                <imageView alignment="left" image="ic_logo" id="U4a-Xe-9Ko"/>
-                                <button alignment="left" verticalAlignment="bottom" id="19M-K7-stN">
-                                    <group key="contentGroup" width="1" alignment="left" spacing="5" id="1dm-AF-vbU">
-                                        <items>
-                                            <imageView alignment="center" verticalAlignment="center" image="ic_record" id="JUO-Yt-Bgi"/>
-                                            <label alignment="center" verticalAlignment="center" text="Record" id="eDV-9G-11P">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                            </label>
-                                        </items>
-                                        <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <edgeInsets key="margins" left="10" right="10" top="12" bottom="12"/>
-                                    </group>
-                                    <connections>
-                                        <action selector="record" destination="AgC-eL-Hgc" id="zVB-Tl-B0k"/>
-                                    </connections>
-                                </button>
-                            </items>
-                            <edgeInsets key="margins" left="10" right="10" top="15" bottom="10"/>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="974" y="653"/>
-        </scene>
-        <!--Page2-->
+        <!--Page3-->
         <scene sceneID="C19-tg-Qh0">
             <objects>
-                <controller identifier="Page2" id="Wu0-7u-3Dk" customClass="UploadInterfaceController" customModule="Watch_Extension">
+                <controller identifier="Page3" id="Wu0-7u-3Dk" customClass="UploadInterfaceController" customModule="Watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="10" id="sqY-Nl-TVg">
                             <items>
@@ -56,7 +25,73 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1238" y="653"/>
+            <point key="canvasLocation" x="974" y="973"/>
+        </scene>
+        <!--Record-->
+        <scene sceneID="2WC-Jk-AUz">
+            <objects>
+                <controller identifier="Page1" title="Record" id="1ar-qG-kpM" customClass="InterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <button alignment="left" id="HhL-YQ-vY1">
+                            <group key="contentGroup" width="1" height="1" alignment="left" id="xK2-x6-VSf">
+                                <items>
+                                    <imageView alignment="center" verticalAlignment="center" image="ic_logo" id="ytg-sC-PbA"/>
+                                </items>
+                                <edgeInsets key="margins" left="10" right="10" top="10" bottom="10"/>
+                            </group>
+                            <connections>
+                                <action selector="record" destination="1ar-qG-kpM" id="gGB-Kh-IuL"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="974" y="653"/>
+        </scene>
+        <!--Documents-->
+        <scene sceneID="HfP-am-4DL">
+            <objects>
+                <controller identifier="Page2" title="Documents" id="rGM-ff-WzQ" customClass="DocumentsInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <table alignment="left" id="r8g-F6-32R">
+                            <items>
+                                <tableRow identifier="cell" id="bAf-wH-5mo" customClass="DocumentTableViewCell" customModule="Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="2" id="wYh-eu-eVZ">
+                                        <items>
+                                            <group width="1" alignment="left" spacing="6" id="7EE-kU-PmZ">
+                                                <items>
+                                                    <label width="0.90000000000000002" alignment="left" verticalAlignment="center" text="Label" id="0eA-KN-NfG">
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <imageView alignment="right" verticalAlignment="center" image="ic_pending" id="PvP-U4-pS2"/>
+                                                </items>
+                                            </group>
+                                            <label alignment="left" text="Label" numberOfLines="3" id="hkQ-ao-nuz"/>
+                                        </items>
+                                        <edgeInsets key="margins" left="10" right="10" top="8" bottom="8"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="contentLabel" destination="hkQ-ao-nuz" id="tfd-ay-s9T"/>
+                                        <outlet property="imageView" destination="PvP-U4-pS2" id="MVe-MU-5gn"/>
+                                        <outlet property="titleLabel" destination="0eA-KN-NfG" id="CpU-z5-uLe"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <menu key="menu" id="Plw-xj-31D">
+                        <items>
+                            <menuItem title="Play" icon="play" id="9cD-C0-1BE"/>
+                            <menuItem title="Print" icon="share" id="lQz-zX-kZX"/>
+                            <menuItem title="Delete" icon="trash" id="1yb-s5-j7A"/>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="tableView" destination="r8g-F6-32R" id="mcB-Kv-f4o"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1253" y="653"/>
         </scene>
     </scenes>
 </document>

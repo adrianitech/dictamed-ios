@@ -60,7 +60,7 @@ class UploadInterfaceController: WKInterfaceController {
                     if !finished2 {
                         self.loadingIndicator.updateProgress(percentage: 50 + progress2 * 50)
                     } else {
-                        WKInterfaceController.reloadRootControllersWithNames(["Page1"], contexts: nil)
+                        self.dismissController()
                     }
                 }
             }
