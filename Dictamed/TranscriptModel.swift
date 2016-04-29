@@ -18,10 +18,11 @@ class TranscriptModel {
     
     var validated: Bool = false
     
-    var audio: String!
+    var audio: String?
     
-    var audioURL: NSURL {
-        return NSURL(string: DictamedAPI.sharedInstance.websiteAPIURL + self.audio)!
+    var audioURL: NSURL? {
+        guard let audio = self.audio else { return nil }
+        return NSURL(string: DictamedAPI.sharedInstance.websiteAPIURL + audio)
     }
     
     init(dict: NSDictionary) {
@@ -29,7 +30,7 @@ class TranscriptModel {
         self.title = dict.valueForKey("title") as! String
         self.translation = dict.valueForKey("translation") as! String
         self.validated = dict.valueForKey("validated") as? Bool ?? false
-        self.audio = dict.valueForKey("audio") as! String
+        self.audio = dict.valueForKey("audio") as? String
     }
     
 }

@@ -18,6 +18,8 @@
 		3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */; };
 		3A6FC1E51CCE16A3000EA167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A7007941CD23E9900DDAAD8 /* UploadInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7007931CD23E9900DDAAD8 /* UploadInterfaceController.swift */; };
+		3A76E1D11CD3E6EA00E459A5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A76E1D01CD3E6EA00E459A5 /* RecordViewController.swift */; };
+		3A76E1D21CD3EAB600E459A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BDF91CCCE52A002C9291 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDF71CCCE52A002C9291 /* Interface.storyboard */; };
 		3A77BDFB1CCCE52A002C9291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BE021CCCE52A002C9291 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A77BE011CCCE52A002C9291 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -90,6 +92,7 @@
 		3A6FC1E31CCE142C000EA167 /* Dictamed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dictamed.entitlements; sourceTree = "<group>"; };
 		3A6FC1E41CCE152F000EA167 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		3A7007931CD23E9900DDAAD8 /* UploadInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadInterfaceController.swift; sourceTree = "<group>"; };
+		3A76E1D01CD3E6EA00E459A5 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		3A77BDF51CCCE52A002C9291 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A77BDF81CCCE52A002C9291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 			children = (
 				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
 				3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */,
+				3A76E1D01CD3E6EA00E459A5 /* RecordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -388,6 +392,7 @@
 			files = (
 				3A53ECCA1CCCD6EA00BB274E /* LaunchScreen.storyboard in Resources */,
 				3A53ECC71CCCD6EA00BB274E /* Assets.xcassets in Resources */,
+				3A76E1D21CD3EAB600E459A5 /* Assets.xcassets in Resources */,
 				3A53ECC51CCCD6EA00BB274E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +519,7 @@
 				3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */,
 				3A441E031CCF649A008250A8 /* TranscriptModel.swift in Sources */,
 				3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */,
+				3A76E1D11CD3E6EA00E459A5 /* RecordViewController.swift in Sources */,
 				3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */,
 				3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */,
 				3A53ECD21CCCDB9700BB274E /* MainViewController.swift in Sources */,
