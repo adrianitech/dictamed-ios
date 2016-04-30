@@ -12,7 +12,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="10" id="sqY-Nl-TVg">
                             <items>
-                                <imageView alignment="center" verticalAlignment="center" contentMode="center" id="NA0-D2-Zlu"/>
+                                <imageView alignment="center" verticalAlignment="center" id="NA0-D2-Zlu"/>
                                 <label alignment="center" verticalAlignment="center" id="KL3-K0-XJM">
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
@@ -33,9 +33,13 @@
                 <controller identifier="Page1" title="Record" id="1ar-qG-kpM" customClass="InterfaceController" customModule="Watch_Extension">
                     <items>
                         <button alignment="left" id="HhL-YQ-vY1">
-                            <group key="contentGroup" width="1" height="1" alignment="left" id="xK2-x6-VSf">
+                            <group key="contentGroup" width="1" height="1" alignment="left" layout="vertical" spacing="10" id="xK2-x6-VSf">
                                 <items>
                                     <imageView alignment="center" verticalAlignment="center" image="ic_logo" id="ytg-sC-PbA"/>
+                                    <label width="0.80000000000000004" alignment="center" verticalAlignment="center" text="Tap the screen to start recording" textAlignment="center" numberOfLines="0" id="2QP-EX-4X8">
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                    </label>
                                 </items>
                                 <edgeInsets key="margins" left="10" right="10" top="10" bottom="10"/>
                             </group>
@@ -53,6 +57,7 @@
             <objects>
                 <controller identifier="Page2" title="Documents" id="rGM-ff-WzQ" customClass="DocumentsInterfaceController" customModule="Watch_Extension">
                     <items>
+                        <imageView alignment="center" verticalAlignment="center" id="OgM-a9-7uC"/>
                         <table alignment="left" id="r8g-F6-32R">
                             <items>
                                 <tableRow identifier="cell" id="bAf-wH-5mo" customClass="DocumentTableViewCell" customModule="Watch_Extension">
@@ -79,14 +84,8 @@
                             </items>
                         </table>
                     </items>
-                    <menu key="menu" id="Plw-xj-31D">
-                        <items>
-                            <menuItem title="Play" icon="play" id="9cD-C0-1BE"/>
-                            <menuItem title="Print" icon="share" id="lQz-zX-kZX"/>
-                            <menuItem title="Delete" icon="trash" id="1yb-s5-j7A"/>
-                        </items>
-                    </menu>
                     <connections>
+                        <outlet property="loadingImage" destination="OgM-a9-7uC" id="KED-hG-YRl"/>
                         <outlet property="tableView" destination="r8g-F6-32R" id="mcB-Kv-f4o"/>
                     </connections>
                 </controller>

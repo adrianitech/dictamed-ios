@@ -8,6 +8,7 @@ end
 target 'Dictamed' do
     platform :ios, '9.0'
     common_pods
+    pod 'JGProgressHUD'
 end
 
 target 'Watch Extension' do

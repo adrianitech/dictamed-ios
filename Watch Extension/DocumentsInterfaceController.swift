@@ -8,10 +8,15 @@
 
 import WatchKit
 import Foundation
+import EMTLoadingIndicator
 
 class DocumentsInterfaceController: WKInterfaceController {
 
+    @IBOutlet var loadingImage: WKInterfaceImage!
+    
     @IBOutlet var tableView: WKInterfaceTable!
+    
+    private var loadingIndicator: EMTLoadingIndicator!
     
     var items: [TranscriptModel] = [] {
         didSet {
@@ -35,12 +40,25 @@ class DocumentsInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        self.loadingIndicator = EMTLoadingIndicator(
+            interfaceController: self,
+            interfaceImage: self.loadingImage,
+            width: 24, height: 24,
+            style: EMTLoadingIndicatorWaitStyle.Line)
+        self.loadingIndicator.prepareImagesForWait()
     }
 
     override func willActivate() {
         super.willActivate()
         
+        self.loadingImage.setHidden(false)
+        self.loadingIndicator.showWait()
+        
         DictamedAPI.sharedInstance.getAllPosts { (items) in
+            self.loadingImage.setHidden(true)
+            self.loadingIndicator.hide()
+            
             self.items = items.sort { $0.validated && !$1.validated }
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class DocumentHeaderCollectionReusableView: UICollectionReusableView {
     
@@ -74,6 +75,16 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     var pendingItems: [TranscriptModel] = [] {
         didSet {
             self.collectionView.reloadData()
+        }
+    }
+    
+    var isRecording: Bool = false {
+        didSet {
+            if self.isRecording {
+                self.recordButton.setImage(UIImage(named: "ic_stop"), forState: UIControlState.Normal)
+            } else {
+                self.recordButton.setImage(UIImage(named: "ic_record"), forState: UIControlState.Normal)
+            }
         }
     }
     
@@ -162,16 +173,29 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
 extension RecordViewController: AudioRecorderDelegate {
     
     func didStartRecording(recorder: AudioRecorder) {
-        // self.startTime = NSDate().timeIntervalSince1970
+        self.isRecording = true
     }
     
     func didStopRecording(recorder: AudioRecorder) {
-        // self.timeLabel.text = "Transcribing..."
-        DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (_, _, text) in
-            // self.timeLabel.text = "Uploading..."
-            DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) { (_, _) in
-                // self.timeLabel.text = ""
-                self.refreshItems()
+        self.isRecording = false
+        
+        let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
+        hud.showInView(self.view, animated: true)
+        hud.setProgress(0, animated: true)
+        hud.textLabel.text = "Transcribing"
+        
+        DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (finished, progress, text) in
+            if !finished {
+                hud.setProgress(progress * 0.5, animated: true)
+            } else {
+                hud.textLabel.text = "Uploading"
+                DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) { (finished2, progress2) in
+                    if !finished2 {
+                        hud.setProgress(0.5 + progress * 0.5, animated: true)
+                    } else {
+                        self.refreshItems()
+                    }
+                }
             }
         }
     }
