@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import JGProgressHUD
+import SVProgressHUD
 
 class DocumentHeaderCollectionReusableView: UICollectionReusableView {
     
@@ -61,6 +61,8 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var recordButton: UIButton!
     
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var levelView: UIView!
     
     var recorder: AudioRecorder!
     
@@ -135,7 +137,6 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! DocumentCollectionViewCell
-        
         var item: TranscriptModel
         
         if indexPath.section == 0 { item = self.validItems[indexPath.row] }
@@ -156,16 +157,67 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             return header
         }
+        else if kind == UICollectionElementKindSectionFooter {
+            return collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "footer", forIndexPath: indexPath)
+        }
         
         return UICollectionReusableView()
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        if indexPath.section == 0 && self.validItems.count == 0 || indexPath.section == 1 && self.pendingItems.count == 0 {
+            return CGSize(width: collectionView.frame.width - 4, height: 200)
+        }
         return CGSize(width: (collectionView.frame.width - 4) / 2, height: 1.3 * collectionView.frame.width / 2)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 35)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if section == 0 && self.validItems.count != 0 || section == 1 && self.pendingItems.count != 0 {
+            return CGSize.zero
+        }
+        return CGSize(width: collectionView.frame.width, height: 200)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        
+        var item: TranscriptModel
+        
+        if indexPath.section == 0 { item = self.validItems[indexPath.row] }
+        else { item = self.pendingItems[indexPath.row] }
+        
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let option1 = UIAlertAction(title: "Print", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        let option2 = UIAlertAction(title: "Delete", style: .Destructive, handler: {
+            (alert: UIAlertAction!) -> Void in
+            DictamedAPI.sharedInstance.deletePost(item.id, callback: {
+                self.collectionView.performBatchUpdates({ 
+                    let index1 = self.validItems.indexOf { $0.id == item.id }
+                    let index2 = self.pendingItems.indexOf { $0.id == item.id }
+                    
+                    if let index1 = index1 { self.validItems.removeAtIndex(index1) }
+                    if let index2 = index2 { self.pendingItems.removeAtIndex(index2) }
+                    
+                    self.collectionView.deleteItemsAtIndexPaths([indexPath])
+                }, completion: nil)
+            })
+        })
+        let option3 = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        optionMenu.addAction(option1)
+        optionMenu.addAction(option2)
+        optionMenu.addAction(option3)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
     }
 
 }
@@ -179,20 +231,18 @@ extension RecordViewController: AudioRecorderDelegate {
     func didStopRecording(recorder: AudioRecorder) {
         self.isRecording = false
         
-        let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
-        hud.showInView(self.view, animated: true)
-        hud.setProgress(0, animated: true)
-        hud.textLabel.text = "Transcribing"
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
+        SVProgressHUD.show()
         
         DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (finished, progress, text) in
             if !finished {
-                hud.setProgress(progress * 0.5, animated: true)
+                SVProgressHUD.showProgress(progress * 0.5, status: "Transcribing")
             } else {
-                hud.textLabel.text = "Uploading"
                 DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) { (finished2, progress2) in
                     if !finished2 {
-                        hud.setProgress(0.5 + progress * 0.5, animated: true)
+                        SVProgressHUD.showProgress(0.5 + progress * 0.5, status: "Uploading")
                     } else {
+                        SVProgressHUD.dismiss()
                         self.refreshItems()
                     }
                 }
@@ -201,10 +251,9 @@ extension RecordViewController: AudioRecorderDelegate {
     }
     
     func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat) {
-//        self.setTime()
-//        UIView.animateWithDuration(0.2) {
-//            self.volumeView.transform = CGAffineTransformMakeScale(level, level)
-//        }
+        UIView.animateWithDuration(0.2) {
+            self.levelView.transform = CGAffineTransformMakeScale(level, 1)
+        }
     }
     
 }
