@@ -17,6 +17,8 @@ protocol AudioRecorderDelegate {
     
     func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat)
     
+    func didUpdateTime(recorder: AudioRecorder, time: Double)
+    
 }
 
 class AudioRecorder: NSObject {
@@ -28,6 +30,8 @@ class AudioRecorder: NSObject {
     var meterTimer: NSTimer!
     
     var fileURL: NSURL!
+    
+    var startTime: Double = 0
     
     var recording: Bool {
         get {
@@ -58,17 +62,6 @@ class AudioRecorder: NSObject {
         let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.dictamed.Dictamed")
         self.fileURL = container?.URLByAppendingPathComponent(fileName)
         
-        
-//        let currentFileName = "audio.wav"
-//        let documentsDirectory = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-//        self.fileURL = documentsDirectory.URLByAppendingPathComponent(currentFileName)
-        
-        print(self.fileURL)
-        
-//        if NSFileManager.defaultManager().fileExistsAtPath(self.fileURL.absoluteString) {
-//            print("File \(self.fileURL.absoluteString) exists")
-//        }
-        
         let recordSettings: [String : AnyObject] = [
             AVFormatIDKey: NSNumber(unsignedInt: kAudioFormatLinearPCM),
             AVEncoderAudioQualityKey : AVAudioQuality.Max.rawValue,
@@ -89,6 +82,7 @@ class AudioRecorder: NSObject {
     }
     
     func record() {
+        self.startTime = NSDate().timeIntervalSince1970
         AVAudioSession.sharedInstance().requestRecordPermission({ (granted) -> Void in
             if granted {
                 if self.recorder == nil {
@@ -120,6 +114,8 @@ class AudioRecorder: NSObject {
             self.delegate?.didReceiveAudioLevel(self, level: linear)
         }
         
+        let diff = NSDate().timeIntervalSince1970 - self.startTime
+        self.delegate?.didUpdateTime(self, time: diff)
     }
     
 }

@@ -14,7 +14,6 @@
 		3A53ECC51CCCD6EA00BB274E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC31CCCD6EA00BB274E /* Main.storyboard */; };
 		3A53ECC71CCCD6EA00BB274E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A53ECCA1CCCD6EA00BB274E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */; };
-		3A53ECD21CCCDB9700BB274E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53ECD11CCCDB9700BB274E /* MainViewController.swift */; };
 		3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */; };
 		3A6FC1E51CCE16A3000EA167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A7007941CD23E9900DDAAD8 /* UploadInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7007931CD23E9900DDAAD8 /* UploadInterfaceController.swift */; };
@@ -32,7 +31,6 @@
 		3AD41ACA1CD3AC4100361DC3 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */; };
 		3AD41ACB1CD3AEB600361DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */; };
 		3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */; };
-		3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */; };
 		B562BA87BC16EDE9F54394AC /* Pods_Dictamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +85,6 @@
 		3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A53ECC91CCCD6EA00BB274E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A53ECCB1CCCD6EA00BB274E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A53ECD11CCCDB9700BB274E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		3A6FC1E31CCE142C000EA167 /* Dictamed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dictamed.entitlements; sourceTree = "<group>"; };
 		3A6FC1E41CCE152F000EA167 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
@@ -105,7 +102,6 @@
 		3AD41AC71CD3A98C00361DC3 /* DocumentsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsInterfaceController.swift; sourceTree = "<group>"; };
 		3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictamedAPI.swift; sourceTree = "<group>"; };
-		3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
 		6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dictamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,8 +181,6 @@
 		3A441E071CCF65AA008250A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A53ECD11CCCDB9700BB274E /* MainViewController.swift */,
-				3AF014181CCD210B00F3A990 /* DocumentsTableViewController.swift */,
 				3A76E1D01CD3E6EA00E459A5 /* RecordViewController.swift */,
 			);
 			name = Controllers;
@@ -516,13 +510,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF014191CCD210B00F3A990 /* DocumentsTableViewController.swift in Sources */,
 				3A441E031CCF649A008250A8 /* TranscriptModel.swift in Sources */,
 				3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */,
 				3A76E1D11CD3E6EA00E459A5 /* RecordViewController.swift in Sources */,
 				3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */,
 				3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */,
-				3A53ECD21CCCDB9700BB274E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

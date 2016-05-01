@@ -62,6 +62,8 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var progressView: UIProgressView!
+    
     @IBOutlet weak var levelView: UIView!
     
     var recorder: AudioRecorder!
@@ -86,6 +88,8 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
                 self.recordButton.setImage(UIImage(named: "ic_stop"), forState: UIControlState.Normal)
             } else {
                 self.recordButton.setImage(UIImage(named: "ic_record"), forState: UIControlState.Normal)
+                self.progressView.progress = 0
+                self.timeLabel.text = "--:--"
             }
         }
     }
@@ -93,7 +97,12 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_back")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_back")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
         refresh = UIRefreshControl()
+        refresh.tintColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         refresh.addTarget(self, action: #selector(RecordViewController.refreshItems), forControlEvents: UIControlEvents.ValueChanged)
         self.collectionView.insertSubview(refresh, atIndex: 0)
         
@@ -254,6 +263,16 @@ extension RecordViewController: AudioRecorderDelegate {
         UIView.animateWithDuration(0.2) {
             self.levelView.transform = CGAffineTransformMakeScale(level, 1)
         }
+    }
+    
+    func didUpdateTime(recorder: AudioRecorder, time: Double) {
+        let date = NSDate(timeIntervalSince1970: time)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "mm:ss"
+        
+        self.timeLabel.text = dateFormatter.stringFromDate(date)
+        self.progressView.progress = Float(min(1, time / 60))
     }
     
 }
