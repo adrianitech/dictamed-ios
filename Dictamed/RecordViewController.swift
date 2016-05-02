@@ -106,10 +106,10 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
         refresh.addTarget(self, action: #selector(RecordViewController.refreshItems), forControlEvents: UIControlEvents.ValueChanged)
         self.collectionView.insertSubview(refresh, atIndex: 0)
         
-        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 75, right: 0)
         
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -174,9 +174,6 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        if indexPath.section == 0 && self.validItems.count == 0 || indexPath.section == 1 && self.pendingItems.count == 0 {
-            return CGSize(width: collectionView.frame.width - 4, height: 200)
-        }
         return CGSize(width: (collectionView.frame.width - 4) / 2, height: 1.3 * collectionView.frame.width / 2)
     }
     

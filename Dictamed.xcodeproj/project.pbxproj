@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20304E9B8B5C90A8F8BF29C0 /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */; };
+		3A30A0991CD7B7070076EC33 /* SettingsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A30A0981CD7B7070076EC33 /* SettingsCollectionViewController.swift */; };
 		3A441E031CCF649A008250A8 /* TranscriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A441E021CCF649A008250A8 /* TranscriptModel.swift */; };
 		3A441E041CCF657E008250A8 /* TranscriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A441E021CCF649A008250A8 /* TranscriptModel.swift */; };
 		3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A30A0981CD7B7070076EC33 /* SettingsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewController.swift; sourceTree = "<group>"; };
 		3A441E021CCF649A008250A8 /* TranscriptModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptModel.swift; sourceTree = "<group>"; };
 		3A53ECBC1CCCD6EA00BB274E /* Dictamed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictamed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A53ECBF1CCCD6EA00BB274E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				3A76E1D01CD3E6EA00E459A5 /* RecordViewController.swift */,
+				3A30A0981CD7B7070076EC33 /* SettingsCollectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				3A441E031CCF649A008250A8 /* TranscriptModel.swift in Sources */,
 				3AD438E41CCE2FAC00491B55 /* DictamedAPI.swift in Sources */,
 				3A76E1D11CD3E6EA00E459A5 /* RecordViewController.swift in Sources */,
+				3A30A0991CD7B7070076EC33 /* SettingsCollectionViewController.swift in Sources */,
 				3A53ECC01CCCD6EA00BB274E /* AppDelegate.swift in Sources */,
 				3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */,
 			);
