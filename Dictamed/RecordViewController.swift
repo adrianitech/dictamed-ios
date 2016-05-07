@@ -15,11 +15,24 @@ class DocumentHeaderCollectionReusableView: UICollectionReusableView {
     
 }
 
+class DocumentFooterCollectionReusableView: UICollectionReusableView {
+    
+    @IBOutlet weak var pageView: UIView!
+    
+    override func awakeFromNib() {
+        self.pageView.layer.borderWidth = 1
+        self.pageView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).CGColor
+    }
+    
+}
+
 class DocumentCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var pageView: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var iconView: UIImageView!
     
     @IBOutlet weak var contentLabel: UILabel!
     
@@ -62,9 +75,9 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var progressView: UIProgressView!
-    
     @IBOutlet weak var levelView: UIView!
+    
+    @IBOutlet var disabledConstraints: [NSLayoutConstraint]!
     
     var recorder: AudioRecorder!
     
@@ -88,8 +101,14 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
                 self.recordButton.setImage(UIImage(named: "ic_stop"), forState: UIControlState.Normal)
             } else {
                 self.recordButton.setImage(UIImage(named: "ic_record"), forState: UIControlState.Normal)
-                self.progressView.progress = 0
-                self.timeLabel.text = "--:--"
+                self.timeLabel.text = "Press record to start"
+            }
+            
+            self.disabledConstraints
+                .forEach { $0.active = self.isRecording }
+            
+            UIView.animateWithDuration(0.5) { 
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -153,6 +172,9 @@ class RecordViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         cell.titleLabel.text = item.title
         cell.contentLabel.text = item.translation
+        
+        if indexPath.section == 0 { cell.iconView.image = UIImage(named: "ic_check") }
+        else { cell.iconView.image = UIImage(named: "ic_pending") }
         
         return cell
     }
@@ -244,11 +266,12 @@ extension RecordViewController: AudioRecorderDelegate {
             if !finished {
                 SVProgressHUD.showProgress(progress * 0.5, status: "Transcribing")
             } else {
+                SVProgressHUD.showProgress(0.5, status: "Uploading")
                 DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) { (finished2, progress2) in
                     if !finished2 {
                         SVProgressHUD.showProgress(0.5 + progress * 0.5, status: "Uploading")
                     } else {
-                        SVProgressHUD.dismiss()
+                        SVProgressHUD.showSuccessWithStatus("Done")
                         self.refreshItems()
                     }
                 }
@@ -257,7 +280,7 @@ extension RecordViewController: AudioRecorderDelegate {
     }
     
     func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat) {
-        UIView.animateWithDuration(0.2) {
+        UIView.animateWithDuration(0.1) {
             self.levelView.transform = CGAffineTransformMakeScale(level, 1)
         }
     }
@@ -268,8 +291,7 @@ extension RecordViewController: AudioRecorderDelegate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "mm:ss"
         
-        self.timeLabel.text = dateFormatter.stringFromDate(date)
-        self.progressView.progress = Float(min(1, time / 60))
+        self.timeLabel.text = "You have " + dateFormatter.stringFromDate(date) + " left of this recording"
     }
     
 }

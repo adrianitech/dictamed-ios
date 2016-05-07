@@ -30,7 +30,7 @@ class DictamedAPI {
     private let speechAPIURL = "https://www.google.com/speech-api/v2/recognize?output=json&lang=%@&key=%@"
     
     #if DEBUG
-    let websiteAPIURL = "http://192.168.0.104:3000"
+    let websiteAPIURL = "http://192.168.1.44:3000"
     #else
     let websiteAPIURL = "http://dictamed-web-develop.herokuapp.com"
     #endif
@@ -43,18 +43,23 @@ class DictamedAPI {
                     callback(false, Float(i) / Float(n), nil)
                 }
             })
-            .responseString { (response) -> Void in
-                var string = response.result.value
-                if let index = response.result.value?.characters.indexOf("\n") {
-                    string = response.result.value?.substringFromIndex(index)
-                }
-                
-                if let string = string, let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
-                    let json = JSON(data: data)
-                    let text = json["result", 0, "alternative", 0, "transcript"].string
+            .responseString { (res) -> Void in
+                switch res.result {
+                case .Failure(let error):
+                    print(error)
+                case .Success(let value):
+                    var string = value
+                    if let index = value.characters.indexOf("\n") {
+                        string = value.substringFromIndex(index)
+                    }
                     
-                    dispatch_async(dispatch_get_main_queue()) {
-                        callback(true, 0, text)
+                    if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
+                        let json = JSON(data: data)
+                        let text = json["result", 0, "alternative", 0, "transcript"].string
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            callback(true, 0, text)
+                        }
                     }
                 }
         }

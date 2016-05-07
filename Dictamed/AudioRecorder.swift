@@ -114,7 +114,7 @@ class AudioRecorder: NSObject {
             self.delegate?.didReceiveAudioLevel(self, level: linear)
         }
         
-        let diff = NSDate().timeIntervalSince1970 - self.startTime
+        let diff = 60 - (NSDate().timeIntervalSince1970 - self.startTime)
         self.delegate?.didUpdateTime(self, time: diff)
     }
     
