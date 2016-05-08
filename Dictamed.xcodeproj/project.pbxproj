@@ -104,6 +104,7 @@
 		3AD41AC71CD3A98C00361DC3 /* DocumentsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsInterfaceController.swift; sourceTree = "<group>"; };
 		3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		3AD438E31CCE2FAC00491B55 /* DictamedAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictamedAPI.swift; sourceTree = "<group>"; };
+		3ADEC80F1CDF3E6800CA4079 /* Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Watch.entitlements; sourceTree = "<group>"; };
 		6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dictamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 		3A77BDF61CCCE52A002C9291 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
+				3ADEC80F1CDF3E6800CA4079 /* Watch.entitlements */,
 				3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */,
 				3A77BDFC1CCCE52A002C9291 /* Info.plist */,
 				3A77BDF71CCCE52A002C9291 /* Interface.storyboard */,
@@ -350,6 +352,11 @@
 					3A77BDF41CCCE52A002C9291 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = HGQ4BRJQEM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3A77BE001CCCE52A002C9291 = {
 						CreatedOnToolsVersion = 7.3;
@@ -700,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Watch/Watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				IBSC_MODULE = Watch_Extension;
@@ -718,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Watch/Watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				IBSC_MODULE = Watch_Extension;
