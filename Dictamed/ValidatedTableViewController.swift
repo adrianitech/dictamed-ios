@@ -84,17 +84,21 @@ class ValidatedTableViewController: UITableViewController {
         if item.title == "Sent from iPhone" { cell.setDevicePhone() }
         else { cell.setDeviceWatch() }
         
-        let printView = UIView()
-        printView.backgroundColor = UIColor(red:0.11,green:0.47,blue:1.00,alpha:1.00)
+        let image1 = UIImageView()
+        image1.tintColor = UIColor.whiteColor()
+        image1.image = UIImage(named: "ic_printer")
+        image1.contentMode = .Center
         
-        let deleteView = UIView()
-        deleteView.backgroundColor = UIColor(red:0.90,green:0.27,blue:0.33,alpha:1.00)
+        let image2 = UIImageView()
+        image2.tintColor = UIColor.whiteColor()
+        image2.image = UIImage(named: "ic_garbage")
+        image2.contentMode = .Center
         
-        cell.setSwipeGestureWithView(printView, color: printView.backgroundColor!, mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
+        cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11,green:0.47,blue:1.00,alpha:1.00), mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
             //
         }
         
-        cell.setSwipeGestureWithView(deleteView, color: deleteView.backgroundColor!, mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State3) { (_, _, _) in
+        cell.setSwipeGestureWithView(image2, color: UIColor(red:0.98,green:0.00,blue:0.03,alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State3) { (_, _, _) in
             DictamedAPI.sharedInstance.deletePost(item.id, callback: { 
                 self.tableView.beginUpdates()
                 self.items.removeAtIndex((self.items.indexOf { $0.id == item.id })!)
