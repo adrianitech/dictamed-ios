@@ -112,10 +112,10 @@ class AudioRecorder: NSObject {
             let decibels = self.recorder.averagePowerForChannel(0)
             let linear = min(1, CGFloat(pow(10, decibels / 20)) * 3)
             self.delegate?.didReceiveAudioLevel(self, level: linear)
+            
+            let diff = 60 - (NSDate().timeIntervalSince1970 - self.startTime)
+            self.delegate?.didUpdateTime(self, time: diff)
         }
-        
-        let diff = 60 - (NSDate().timeIntervalSince1970 - self.startTime)
-        self.delegate?.didUpdateTime(self, time: diff)
     }
     
 }

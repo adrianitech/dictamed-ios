@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="ZiZ-kP-HNQ">
             <objects>
-                <tabBarController id="z5A-Ni-mdp" sceneMemberID="viewController">
+                <tabBarController id="z5A-Ni-mdp" customClass="CustomTabBarController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fER-UP-0Lr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -104,7 +104,7 @@
                             <rect key="frame" x="180" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="duR-af-mbm">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="duR-af-mbm">
                                     <rect key="frame" x="0.0" y="8" width="240" height="17"/>
                                 </imageView>
                             </subviews>
@@ -124,7 +124,7 @@
         <!--Validated-->
         <scene sceneID="BwI-7b-Bsp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KJM-8v-ENp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KJM-8v-ENp" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Validated" image="ic_checked" id="oZC-xC-oju"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDu-7O-g1X">
@@ -143,7 +143,7 @@
         <!--Pending-->
         <scene sceneID="rO2-Xq-w5w">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9hp-9m-foR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9hp-9m-foR" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pending" image="ic_arrow" id="fWj-18-zo1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5dh-gb-NNU">
@@ -162,7 +162,7 @@
         <!--Record-->
         <scene sceneID="f0E-k1-34k">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDX-fM-2BW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDX-fM-2BW" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Record" image="ic_microphone" id="PJS-bX-w2G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahh-AN-oFW">
@@ -192,7 +192,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-8b-akM">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
-                                <color key="backgroundColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.39607843139999999" alpha="0.25080341312056736" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.05200022163120567" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Kyv-HJ-ggA"/>
                                     <constraint firstAttribute="height" constant="300" id="TJc-Mo-61w"/>
@@ -214,7 +214,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-7T-4Uw">
                                 <rect key="frame" x="300" y="321" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.30249889184397161" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -234,7 +234,7 @@
                             <rect key="frame" x="180" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-as-YUz">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-as-YUz">
                                     <rect key="frame" x="0.0" y="8" width="240" height="17"/>
                                 </imageView>
                             </subviews>
@@ -258,7 +258,7 @@
         <!--Profile-->
         <scene sceneID="r7M-Wh-1yU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4yi-YK-6vE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4yi-YK-6vE" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_user" id="lzp-r9-zWA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NtP-wn-Nhd">
@@ -293,7 +293,7 @@
                             <rect key="frame" x="180" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="A8P-of-jRd">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="A8P-of-jRd">
                                     <rect key="frame" x="0.0" y="8" width="240" height="17"/>
                                 </imageView>
                             </subviews>
@@ -313,7 +313,7 @@
         <!--Menu-->
         <scene sceneID="vwq-Hd-aBl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O5u-sH-Qc4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O5u-sH-Qc4" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Menu" image="ic_menu" id="ptY-GI-8ml"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PYU-Hd-wsH">
@@ -426,7 +426,7 @@
                             <rect key="frame" x="180" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-KU-D5Y">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-KU-D5Y">
                                     <rect key="frame" x="0.0" y="8" width="240" height="17"/>
                                 </imageView>
                             </subviews>
@@ -521,7 +521,7 @@
                             <rect key="frame" x="180" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="k1c-Dk-ehM">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="k1c-Dk-ehM">
                                     <rect key="frame" x="0.0" y="8" width="240" height="17"/>
                                 </imageView>
                             </subviews>
@@ -545,7 +545,7 @@
     <resources>
         <image name="ic_arrow" width="23" height="23"/>
         <image name="ic_checked" width="23" height="23"/>
-        <image name="ic_logo" width="393" height="49"/>
+        <image name="ic_logo_white" width="393" height="49"/>
         <image name="ic_menu" width="23" height="19"/>
         <image name="ic_microphone" width="17" height="23"/>
         <image name="ic_stop" width="10" height="10"/>

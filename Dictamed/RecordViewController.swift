@@ -20,6 +20,8 @@ class RecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
+        
         self.recorder = AudioRecorder()
         self.recorder.delegate = self
     }

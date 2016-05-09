@@ -10,6 +10,32 @@ import UIKit
 import DGElasticPullToRefresh
 import MCSwipeTableViewCell
 
+class CustomTabBarController: UITabBarController {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.tabBar.translucent = false
+        self.tabBar.backgroundColor = UIColor.whiteColor()
+        self.tabBar.backgroundImage = UIImage()
+        self.tabBar.shadowImage = UIImage()
+    }
+    
+}
+
+class CustomNavigationController: UINavigationController {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.navigationBar.translucent = false
+        self.navigationBar.barTintColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
+        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationBar.shadowImage = UIImage()
+    }
+    
+}
+
 class DocumentItemTableViewCell: MCSwipeTableViewCell {
     
     @IBOutlet weak var avatarImageView: UIImageView!
