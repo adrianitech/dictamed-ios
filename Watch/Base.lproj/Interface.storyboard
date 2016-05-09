@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1ar-qG-kpM">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1ar-qG-kpM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -33,11 +33,11 @@
                 <controller identifier="Page1" title="Record" id="1ar-qG-kpM" customClass="InterfaceController" customModule="Watch_Extension">
                     <items>
                         <button alignment="left" id="HhL-YQ-vY1">
-                            <group key="contentGroup" width="1" height="1" alignment="left" layout="vertical" spacing="10" id="xK2-x6-VSf">
+                            <group key="contentGroup" width="1" height="1" alignment="left" layout="vertical" spacing="15" id="xK2-x6-VSf">
                                 <items>
-                                    <imageView alignment="center" verticalAlignment="center" image="ic_logo" id="ytg-sC-PbA"/>
+                                    <imageView alignment="center" verticalAlignment="center" image="ic_logo_white" id="ytg-sC-PbA"/>
                                     <label width="0.80000000000000004" alignment="center" verticalAlignment="center" text="Tap the screen to start recording" textAlignment="center" numberOfLines="0" id="2QP-EX-4X8">
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <fontDescription key="font" type="system" pointSize="11"/>
                                     </label>
                                 </items>

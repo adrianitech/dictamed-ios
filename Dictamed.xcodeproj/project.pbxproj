@@ -247,10 +247,10 @@
 		3A77BDF61CCCE52A002C9291 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
-				3ADEC80F1CDF3E6800CA4079 /* Watch.entitlements */,
 				3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */,
 				3A77BDFC1CCCE52A002C9291 /* Info.plist */,
 				3A77BDF71CCCE52A002C9291 /* Interface.storyboard */,
+				3ADEC80F1CDF3E6800CA4079 /* Watch.entitlements */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
