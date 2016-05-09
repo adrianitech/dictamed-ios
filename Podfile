@@ -9,6 +9,8 @@ target 'Dictamed' do
     platform :ios, '9.0'
     common_pods
     pod 'SVProgressHUD'
+    pod 'DGElasticPullToRefresh'
+    pod 'MCSwipeTableViewCell'
 end
 
 target 'Watch Extension' do

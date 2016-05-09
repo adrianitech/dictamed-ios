@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,25 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        if WCSession.isSupported() {
-            let session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-        }
+        UITabBar.appearance().tintColor = UIColor(red:0.47,green:0.73,blue:0.23,alpha:1.00)
         
         return true
     }
 
-}
-
-extension AppDelegate: WCSessionDelegate {
-    
-    func session(session: WCSession, didReceiveFile file: WCSessionFile) {
-        DictamedAPI.sharedInstance.transcribeAudio(file.fileURL, language: AudioLanguage.Romana) { (_, _, text) in
-            DictamedAPI.sharedInstance.submitAudio(file.fileURL, translation: text, device: DictamedDeviceType.Watch) { (_, _) in
-                //
-            }
-        }
-    }
-    
 }
