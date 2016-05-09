@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="7Fw-Da-yKb" customClass="DocumentItemTableViewCell" customModule="Dictamed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Fw-Da-yKb" id="d8B-hC-NR7">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9yU-Yt-89S" customClass="AnimatableImageView" customModule="IBAnimatable">
+                        <rect key="frame" x="15" y="15" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="0RB-oU-VLM"/>
+                            <constraint firstAttribute="width" constant="48" id="PF6-6U-qpV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" white="0.95061645340000001" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="24 Mar 2016, 12:35 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-oS-FjA">
+                        <rect key="frame" x="76" y="15" width="131" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-fZ-die">
+                        <rect key="frame" x="76" y="34" width="379" height="50.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_watch" translatesAutoresizingMaskIntoConstraints="NO" id="pyD-cv-Ej5">
+                        <rect key="frame" x="475" y="15" width="10" height="14"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uP5-fZ-die" firstAttribute="leading" secondItem="QmT-oS-FjA" secondAttribute="leading" id="Dws-Eo-Ee0"/>
+                    <constraint firstItem="QmT-oS-FjA" firstAttribute="leading" secondItem="9yU-Yt-89S" secondAttribute="trailing" constant="13" id="Gje-q2-yCl"/>
+                    <constraint firstAttribute="trailing" secondItem="uP5-fZ-die" secondAttribute="trailing" constant="45" id="LvK-ns-M0b"/>
+                    <constraint firstItem="pyD-cv-Ej5" firstAttribute="top" secondItem="d8B-hC-NR7" secondAttribute="top" constant="15" id="VTj-9l-GTt"/>
+                    <constraint firstItem="9yU-Yt-89S" firstAttribute="leading" secondItem="d8B-hC-NR7" secondAttribute="leading" constant="15" id="Vfh-A8-ton"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9yU-Yt-89S" secondAttribute="bottom" constant="15" id="cQa-n8-cGq"/>
+                    <constraint firstItem="9yU-Yt-89S" firstAttribute="top" secondItem="d8B-hC-NR7" secondAttribute="top" constant="15" id="dVN-6z-T7J"/>
+                    <constraint firstItem="uP5-fZ-die" firstAttribute="top" secondItem="QmT-oS-FjA" secondAttribute="bottom" constant="4" id="f7K-Yf-jL2"/>
+                    <constraint firstAttribute="trailing" secondItem="pyD-cv-Ej5" secondAttribute="trailing" constant="15" id="fiq-cD-7PN"/>
+                    <constraint firstItem="QmT-oS-FjA" firstAttribute="top" secondItem="d8B-hC-NR7" secondAttribute="top" constant="15" id="joG-AO-SKa"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uP5-fZ-die" secondAttribute="bottom" constant="15" id="kq7-xX-Xjz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="9yU-Yt-89S" id="9ku-6z-2IA"/>
+                <outlet property="contentLabel" destination="uP5-fZ-die" id="vGS-cM-80w"/>
+                <outlet property="dateLabel" destination="QmT-oS-FjA" id="RTA-9F-bhZ"/>
+                <outlet property="deviceImageView" destination="pyD-cv-Ej5" id="92A-hc-at2"/>
+            </connections>
+            <point key="canvasLocation" x="456.5" y="263.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_watch" width="10" height="14"/>
+    </resources>
+</document>

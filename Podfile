@@ -11,6 +11,7 @@ target 'Dictamed' do
     pod 'SVProgressHUD'
     pod 'DGElasticPullToRefresh'
     pod 'MCSwipeTableViewCell'
+    pod 'IBAnimatable'
 end
 
 target 'Watch Extension' do

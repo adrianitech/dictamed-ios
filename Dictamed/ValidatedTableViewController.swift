@@ -9,6 +9,7 @@
 import UIKit
 import DGElasticPullToRefresh
 import MCSwipeTableViewCell
+import IBAnimatable
 
 class CustomTabBarController: UITabBarController {
     
@@ -70,6 +71,8 @@ class ValidatedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.tableFooterView = UIView()
+        self.tableView.registerNib(UINib(nibName: "DocumentTableViewCell", bundle: nil),
+                                   forCellReuseIdentifier: "cell")
         
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.whiteColor()

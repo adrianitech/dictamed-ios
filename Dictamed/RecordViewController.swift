@@ -21,27 +21,27 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
+        self.level.transform = CGAffineTransformMakeScale(0, 0)
         
         self.recorder = AudioRecorder()
-        self.recorder.delegate = self
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.recorder.delegate = nil
+        self.recorder.stopRecording()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.recorder.delegate = self
         self.recorder.record()
     }
     
     @IBAction func stop(sender: AnyObject) {
         self.recorder.stopRecording()
-    }
-    
-    @IBAction func record(sender: AnyObject) {
-        if self.recorder.recording {
-            self.recorder.stopRecording()
-        } else {
-            self.recorder.record()
-        }
     }
     
 }
@@ -65,7 +65,7 @@ extension RecordViewController: AudioRecorderDelegate {
                     if !finished2 {
                         SVProgressHUD.showProgress(0.5 + progress * 0.5, status: "Uploading")
                     } else {
-                        SVProgressHUD.showSuccessWithStatus("Done")
+                        SVProgressHUD.dismiss()
                         self.tabBarController?.selectedIndex = 1
                     }
                 }

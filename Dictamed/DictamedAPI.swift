@@ -30,7 +30,7 @@ class DictamedAPI {
     private let speechAPIURL = "https://www.google.com/speech-api/v2/recognize?output=json&lang=%@&key=%@"
     
     #if DEBUG
-    let websiteAPIURL = "http://192.168.1.44:3000"
+    let websiteAPIURL = "http://localhost:3000"
     #else
     let websiteAPIURL = "http://dictamed-web-develop.herokuapp.com"
     #endif
