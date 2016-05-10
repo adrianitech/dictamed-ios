@@ -14,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        UITabBar.appearance().tintColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
-        
+        application.statusBarHidden = false
         return true
     }
 

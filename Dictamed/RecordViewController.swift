@@ -17,6 +17,8 @@ class RecordViewController: UIViewController {
     
     var recorder: AudioRecorder!
     
+    var lastLevel: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,16 +76,15 @@ extension RecordViewController: AudioRecorderDelegate {
     }
     
     func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat) {
-        UIView.animateWithDuration(0.1) {
-            self.level.transform = CGAffineTransformMakeScale(level, level)
-        }
+        lastLevel = lastLevel + (level - lastLevel) / 10
+        self.level.transform = CGAffineTransformMakeScale(lastLevel, lastLevel)
     }
     
     func didUpdateTime(recorder: AudioRecorder, time: Double) {
         let date = NSDate(timeIntervalSince1970: time)
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "mm:ss"
+        dateFormatter.dateFormat = "mm:ss.SS"
         
         self.timeLabel.text = dateFormatter.stringFromDate(date)
     }

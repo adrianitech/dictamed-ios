@@ -17,9 +17,46 @@ class CustomTabBarController: UITabBarController {
         super.init(coder: aDecoder)
         
         self.tabBar.translucent = false
-        self.tabBar.backgroundColor = UIColor.whiteColor()
+        self.tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
+        self.tabBar.tintColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
         self.tabBar.backgroundImage = UIImage()
         self.tabBar.shadowImage = UIImage()
+        
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.blackColor().colorWithAlphaComponent(0.35)],
+            forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)],
+            forState: UIControlState.Selected)
+    }
+    
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        let index = tabBar.items?.indexOf(item)!
+        if index == 2 {
+            item.setTitleTextAttributes(
+                [NSForegroundColorAttributeName: UIColor.whiteColor()],
+                forState: UIControlState.Selected)
+            tabBar.translucent = true
+            tabBar.barTintColor = UIColor.clearColor()
+        } else {
+            tabBar.translucent = false
+            tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
+        }
+    }
+    
+    override var selectedIndex: Int {
+        didSet {
+            if self.selectedIndex == 2 {
+                self.tabBar.items?[self.selectedIndex].setTitleTextAttributes(
+                    [NSForegroundColorAttributeName: UIColor.whiteColor()],
+                    forState: UIControlState.Selected)
+                self.tabBar.translucent = true
+                self.tabBar.barTintColor = UIColor.clearColor()
+            } else {
+                self.tabBar.translucent = false
+                self.tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
+            }
+        }
     }
     
 }
@@ -100,6 +137,14 @@ class ValidatedTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.items.count == 0 {
+            let imageView = UIImageView()
+            imageView.contentMode = .Center
+            imageView.image = UIImage(named: "ic_placeholder")
+            tableView.backgroundView = imageView
+        } else {
+            tableView.backgroundView = nil
+        }
         return self.items.count
     }
     

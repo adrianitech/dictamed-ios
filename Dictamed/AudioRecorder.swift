@@ -89,7 +89,7 @@ class AudioRecorder: NSObject {
                     self.setupRecorder()
                 }
                 self.recorder.record()
-                self.meterTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self,
+                self.meterTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self,
                     selector: #selector(AudioRecorder.updateAudioMeter), userInfo: nil, repeats: true)
                 
                 self.delegate?.didStartRecording(self)
