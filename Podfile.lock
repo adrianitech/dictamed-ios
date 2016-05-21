@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.3.1)
+  - Alamofire (3.4.0)
   - DGElasticPullToRefresh (1.0.3)
   - EMTLoadingIndicator (1.0.5)
   - IBAnimatable (2.2)
@@ -17,7 +17,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   DGElasticPullToRefresh: 040f39ae69840b3261d163fe6735c5901bf851e9
   EMTLoadingIndicator: e971bb7d7fa60505c398b8f2f778905c2261bbf6
   IBAnimatable: 41ddf0b307ebec241d5dd510f472c51fb7fe519b
