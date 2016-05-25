@@ -17,9 +17,8 @@ class CustomTabBarController: UITabBarController {
         super.init(coder: aDecoder)
         
         self.tabBar.translucent = false
-        self.tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
         self.tabBar.tintColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
-        self.tabBar.backgroundImage = UIImage()
+        self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
         self.tabBar.shadowImage = UIImage()
         
         UITabBarItem.appearance().setTitleTextAttributes(
@@ -37,10 +36,10 @@ class CustomTabBarController: UITabBarController {
                 [NSForegroundColorAttributeName: UIColor.whiteColor()],
                 forState: UIControlState.Selected)
             tabBar.translucent = true
-            tabBar.barTintColor = UIColor.clearColor()
+            self.tabBar.backgroundImage = UIImage()
         } else {
             tabBar.translucent = false
-            tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
+            self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
         }
     }
     
@@ -52,9 +51,11 @@ class CustomTabBarController: UITabBarController {
                     forState: UIControlState.Selected)
                 self.tabBar.translucent = true
                 self.tabBar.barTintColor = UIColor.clearColor()
+                self.tabBar.backgroundImage = UIImage()
             } else {
                 self.tabBar.translucent = false
                 self.tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
+                self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
             }
         }
     }
