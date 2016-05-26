@@ -50,11 +50,9 @@ class CustomTabBarController: UITabBarController {
                     [NSForegroundColorAttributeName: UIColor.whiteColor()],
                     forState: UIControlState.Selected)
                 self.tabBar.translucent = true
-                self.tabBar.barTintColor = UIColor.clearColor()
                 self.tabBar.backgroundImage = UIImage()
             } else {
                 self.tabBar.translucent = false
-                self.tabBar.barTintColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
                 self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
             }
         }
