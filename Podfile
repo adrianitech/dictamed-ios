@@ -12,6 +12,7 @@ target 'Dictamed' do
     pod 'DGElasticPullToRefresh'
     pod 'MCSwipeTableViewCell'
     pod 'IBAnimatable'
+    pod 'AlamofireImage'
 end
 
 target 'Watch Extension' do

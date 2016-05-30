@@ -9,7 +9,7 @@
 import UIKit
 import DGElasticPullToRefresh
 import MCSwipeTableViewCell
-import IBAnimatable
+import AlamofireImage
 
 class CustomTabBarController: UITabBarController {
     
@@ -161,7 +161,7 @@ class ValidatedTableViewController: UITableViewController {
         
         cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11,green:0.47,blue:1.00,alpha:1.00), mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
             
-            guard let path = NSBundle.mainBundle().pathForResource("Template", ofType: "txt") else { return }
+            guard let path = NSBundle.mainBundle().pathForResource("Template", ofType: "html", inDirectory: "html") else { return }
             
             let content = try! String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
             let text = String(format: content, item.title, item.createdAt.formatDate(), item.translation)
