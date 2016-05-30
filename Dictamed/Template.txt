@@ -1,0 +1,7 @@
+<div style="margin-bottom: 50px; padding: 10px 40px; background: rgb(150,150,150); color: white;">
+    <h2>Notita medicala</h2>
+</div>
+<h1 style="margin: 0;">%@</h1>
+<p style="margin: 0;">%@</p>
+<br/>
+<p>%@</p>

@@ -66,7 +66,7 @@
         <!--Validated-->
         <scene sceneID="BwI-7b-Bsp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KJM-8v-ENp" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KJM-8v-ENp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Validated" image="ic_checked" selectedImage="ic_checked_fill" id="oZC-xC-oju"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDu-7O-g1X">
@@ -85,7 +85,7 @@
         <!--Pending-->
         <scene sceneID="rO2-Xq-w5w">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9hp-9m-foR" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9hp-9m-foR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pending" image="ic_arrow" selectedImage="ic_arrow_fill" id="fWj-18-zo1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5dh-gb-NNU">
@@ -104,7 +104,7 @@
         <!--Record-->
         <scene sceneID="f0E-k1-34k">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDX-fM-2BW" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDX-fM-2BW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Record" image="ic_microphone" selectedImage="ic_microphone_fill" id="PJS-bX-w2G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahh-AN-oFW">
@@ -199,7 +199,7 @@
         <!--Profile-->
         <scene sceneID="r7M-Wh-1yU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4yi-YK-6vE" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4yi-YK-6vE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_user" selectedImage="ic_user_fill" id="lzp-r9-zWA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NtP-wn-Nhd">
@@ -254,7 +254,7 @@
         <!--Menu-->
         <scene sceneID="vwq-Hd-aBl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O5u-sH-Qc4" customClass="CustomNavigationController" customModule="Dictamed" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O5u-sH-Qc4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Menu" image="ic_menu" selectedImage="ic_menu_fill" id="ptY-GI-8ml"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PYU-Hd-wsH">

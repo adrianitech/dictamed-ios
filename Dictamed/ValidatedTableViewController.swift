@@ -21,54 +21,46 @@ class CustomTabBarController: UITabBarController {
         self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
         self.tabBar.shadowImage = UIImage()
         
-        UITabBarItem.appearance().setTitleTextAttributes(
-            [NSForegroundColorAttributeName: UIColor.blackColor().colorWithAlphaComponent(0.35)],
-            forState: UIControlState.Normal)
-        UITabBarItem.appearance().setTitleTextAttributes(
-            [NSForegroundColorAttributeName: UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)],
+        self.tabBar.items?.forEach {
+            $0.setTitleTextAttributes(
+                [NSForegroundColorAttributeName: UIColor.blackColor().colorWithAlphaComponent(0.35)],
+                forState: UIControlState.Normal)
+            $0.setTitleTextAttributes(
+                [NSForegroundColorAttributeName: UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)],
+                forState: UIControlState.Selected)
+        }
+        
+        self.tabBar.items?[2].setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.whiteColor()],
             forState: UIControlState.Selected)
     }
     
+    func setTranslucidBackground() {
+        self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
+        tabBar.translucent = false
+    }
+    
+    func setTransparentBackground() {
+        self.tabBar.backgroundImage = UIImage()
+        tabBar.translucent = true
+    }
+    
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        let index = tabBar.items?.indexOf(item)!
-        if index == 2 {
-            item.setTitleTextAttributes(
-                [NSForegroundColorAttributeName: UIColor.whiteColor()],
-                forState: UIControlState.Selected)
-            tabBar.translucent = true
-            self.tabBar.backgroundImage = UIImage()
+        if tabBar.items?.indexOf(item) == 2 {
+            setTransparentBackground()
         } else {
-            tabBar.translucent = false
-            self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
+            setTranslucidBackground()
         }
     }
     
     override var selectedIndex: Int {
         didSet {
             if self.selectedIndex == 2 {
-                self.tabBar.items?[self.selectedIndex].setTitleTextAttributes(
-                    [NSForegroundColorAttributeName: UIColor.whiteColor()],
-                    forState: UIControlState.Selected)
-                self.tabBar.translucent = true
-                self.tabBar.backgroundImage = UIImage()
+                setTransparentBackground()
             } else {
-                self.tabBar.translucent = false
-                self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
+                setTranslucidBackground()
             }
         }
-    }
-    
-}
-
-class CustomNavigationController: UINavigationController {
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.navigationBar.translucent = false
-        self.navigationBar.barTintColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
-        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationBar.shadowImage = UIImage()
     }
     
 }
@@ -168,7 +160,18 @@ class ValidatedTableViewController: UITableViewController {
         image2.contentMode = .Center
         
         cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11,green:0.47,blue:1.00,alpha:1.00), mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
-            //
+            
+            guard let path = NSBundle.mainBundle().pathForResource("Template", ofType: "txt") else { return }
+            
+            let content = try! String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            let text = String(format: content, item.title, item.createdAt.formatDate(), item.translation)
+            
+            let formatter = UIMarkupTextPrintFormatter(markupText: text)
+            formatter.contentInsets = UIEdgeInsets(top: 36, left: 36, bottom: 36, right: 36)
+            
+            let printController = UIPrintInteractionController.sharedPrintController()
+            printController.printFormatter = formatter
+            printController.presentAnimated(true, completionHandler: nil)
         }
         
         cell.setSwipeGestureWithView(image2, color: UIColor(red:0.98,green:0.00,blue:0.03,alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State3) { (_, _, _) in
