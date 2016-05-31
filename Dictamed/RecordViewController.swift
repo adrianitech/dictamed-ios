@@ -50,6 +50,34 @@ class RecordViewController: UIViewController {
 
 extension RecordViewController: AudioRecorderDelegate {
     
+    func transcribeAudio() {
+        API.sharedInstance.transcribeAudio(recorder.fileURL,
+                                           progress: { (p) in
+                                            SVProgressHUD.showProgress(Float(p) * 0.5, status: "Transcribing")
+            },
+                                           callback: { (obj, _) in
+                                            SVProgressHUD.showProgress(0.5, status: "Uploading")
+                                            if let translation = obj.result {
+                                                self.submitTranscript(translation)
+                                            }
+        })
+    }
+    
+    func submitTranscript(translation: String) {
+        API.sharedInstance.postTranscript("Sent from iPhone", translation: translation) { (obj, _) in
+            if let id = obj.result?.id {
+                API.sharedInstance.postAudio(id, file: self.recorder.fileURL,
+                                             progress: { (p) in
+                                                SVProgressHUD.showProgress(0.5 + Float(p) * 0.5, status: "Uploading")
+                    },
+                                             callback: { (_, _) in
+                                                SVProgressHUD.dismiss()
+                                                self.tabBarController?.selectedIndex = 1
+                })
+            }
+        }
+    }
+    
     func didStartRecording(recorder: AudioRecorder) {
         //
     }
@@ -57,22 +85,7 @@ extension RecordViewController: AudioRecorderDelegate {
     func didStopRecording(recorder: AudioRecorder) {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
         SVProgressHUD.show()
-        
-        DictamedAPI.sharedInstance.transcribeAudio(recorder.fileURL, language: AudioLanguage.Romana) { (finished, progress, text) in
-            if !finished {
-                SVProgressHUD.showProgress(progress * 0.5, status: "Transcribing")
-            } else {
-                SVProgressHUD.showProgress(0.5, status: "Uploading")
-                DictamedAPI.sharedInstance.submitAudio(recorder.fileURL, translation: text, device: DictamedDeviceType.Phone) { (finished2, progress2) in
-                    if !finished2 {
-                        SVProgressHUD.showProgress(0.5 + progress * 0.5, status: "Uploading")
-                    } else {
-                        SVProgressHUD.dismiss()
-                        self.tabBarController?.selectedIndex = 1
-                    }
-                }
-            }
-        }
+        transcribeAudio()
     }
     
     func didReceiveAudioLevel(recorder: AudioRecorder, level: CGFloat) {

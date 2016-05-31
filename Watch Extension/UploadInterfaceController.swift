@@ -48,23 +48,37 @@ class UploadInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    func upload(URL: NSURL) {
-        self.statusLabel.setText("Transcribing")
-        DictamedAPI.sharedInstance.transcribeAudio(URL, language: AudioLanguage.Romana) { (finished, progress, text) in
-            if !finished {
-                self.loadingIndicator.updateProgress(percentage: progress * 50)
-            } else {
-                self.statusLabel.setText("Uploading")
-                self.loadingIndicator.updateProgress(percentage: 50)
-                DictamedAPI.sharedInstance.submitAudio(URL, translation: text, device: DictamedDeviceType.Watch) { (finished2, progress2) in
-                    if !finished2 {
-                        self.loadingIndicator.updateProgress(percentage: 50 + progress2 * 50)
-                    } else {
-                        self.dismissController()
-                    }
-                }
+    func transcribeAudio(URL: NSURL) {
+        API.sharedInstance.transcribeAudio(URL,
+                                           progress: { (p) in
+                                            self.loadingIndicator.updateProgress(percentage: Float(p) * 50)
+            },
+                                           callback: { (obj, _) in
+                                            self.statusLabel.setText("Uploading")
+                                            self.loadingIndicator.updateProgress(percentage: 50)
+                                            if let translation = obj.result {
+                                                self.submitTranscript(translation, URL: URL)
+                                            }
+        })
+    }
+    
+    func submitTranscript(translation: String, URL: NSURL) {
+        API.sharedInstance.postTranscript("Sent from Watch", translation: translation) { (obj, _) in
+            if let id = obj.result?.id {
+                API.sharedInstance.postAudio(id, file: URL,
+                                             progress: { (p) in
+                                                self.loadingIndicator.updateProgress(percentage: 50 + Float(p) * 50)
+                    },
+                                             callback: { (_, _) in
+                                                self.dismissController()
+                })
             }
         }
+    }
+    
+    func upload(URL: NSURL) {
+        self.statusLabel.setText("Transcribing")
+        transcribeAudio(URL)
     }
 
 }

@@ -18,7 +18,7 @@ class DocumentsInterfaceController: WKInterfaceController {
     
     private var loadingIndicator: EMTLoadingIndicator!
     
-    var items: [TranscriptModel] = [] {
+    var items: [TranscriptAPIModel] = [] {
         didSet {
             self.tableView.setNumberOfRows(self.items.count, withRowType: "cell")
             
@@ -55,11 +55,13 @@ class DocumentsInterfaceController: WKInterfaceController {
         self.loadingImage.setHidden(false)
         self.loadingIndicator.showWait()
         
-        DictamedAPI.sharedInstance.getAllPosts { (items) in
-            self.loadingImage.setHidden(true)
-            self.loadingIndicator.hide()
-            
-            self.items = items.sort { $0.validated && !$1.validated }
+        API.sharedInstance.getTranscripts { (obj, _) in
+            if let items = obj.result {
+                self.loadingImage.setHidden(true)
+                self.loadingIndicator.hide()
+
+                self.items = items.sort { $0.validated && !$1.validated }
+            }
         }
     }
 

@@ -9,87 +9,14 @@
 import UIKit
 import DGElasticPullToRefresh
 import MCSwipeTableViewCell
-import AlamofireImage
-
-class CustomTabBarController: UITabBarController {
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.tabBar.translucent = false
-        self.tabBar.tintColor = UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)
-        self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
-        self.tabBar.shadowImage = UIImage()
-        
-        self.tabBar.items?.forEach {
-            $0.setTitleTextAttributes(
-                [NSForegroundColorAttributeName: UIColor.blackColor().colorWithAlphaComponent(0.35)],
-                forState: UIControlState.Normal)
-            $0.setTitleTextAttributes(
-                [NSForegroundColorAttributeName: UIColor(red:0.48,green:0.75,blue:0.30,alpha:1.00)],
-                forState: UIControlState.Selected)
-        }
-        
-        self.tabBar.items?[2].setTitleTextAttributes(
-            [NSForegroundColorAttributeName: UIColor.whiteColor()],
-            forState: UIControlState.Selected)
-    }
-    
-    func setTranslucidBackground() {
-        self.tabBar.backgroundImage = UIImage(named: "bg_tabs")
-        tabBar.translucent = false
-    }
-    
-    func setTransparentBackground() {
-        self.tabBar.backgroundImage = UIImage()
-        tabBar.translucent = true
-    }
-    
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        if tabBar.items?.indexOf(item) == 2 {
-            setTransparentBackground()
-        } else {
-            setTranslucidBackground()
-        }
-    }
-    
-    override var selectedIndex: Int {
-        didSet {
-            if self.selectedIndex == 2 {
-                setTransparentBackground()
-            } else {
-                setTranslucidBackground()
-            }
-        }
-    }
-    
-}
-
-class DocumentItemTableViewCell: MCSwipeTableViewCell {
-    
-    @IBOutlet weak var avatarImageView: UIImageView!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var contentLabel: UILabel!
-    
-    @IBOutlet weak var deviceImageView: UIImageView!
-    
-    func setDeviceWatch() {
-        self.deviceImageView.image = UIImage(named: "ic_watch")
-    }
-    
-    func setDevicePhone() {
-        self.deviceImageView.image = UIImage(named: "ic_phone")
-    }
-    
-}
+import AVKit
+import AVFoundation
 
 class ValidatedTableViewController: UITableViewController {
 
     var validated = true
     
-    var items: [TranscriptModel] = [] {
+    var items: [TranscriptAPIModel] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -119,10 +46,12 @@ class ValidatedTableViewController: UITableViewController {
     }
     
     func refreshItems() {
-        DictamedAPI.sharedInstance.getAllPosts { (items) in
-            self.items = items
-                .sort { $0.createdAt.timeIntervalSince1970 > $1.createdAt.timeIntervalSince1970 }
-                .filter { $0.validated == self.validated }
+        API.sharedInstance.getTranscripts { (obj, _) in
+            if let items = obj.result {
+                self.items = items
+                    .sort { $0.createdAt.timeIntervalSince1970 > $1.createdAt.timeIntervalSince1970 }
+                    .filter { $0.validated == self.validated }
+            }
             self.tableView.dg_stopLoading()
         }
     }
@@ -149,6 +78,11 @@ class ValidatedTableViewController: UITableViewController {
         if item.title == "Sent from iPhone" { cell.setDevicePhone() }
         else { cell.setDeviceWatch() }
         
+        let image0 = UIImageView()
+        image0.tintColor = UIColor.whiteColor()
+        image0.image = UIImage(named: "ic_play")
+        image0.contentMode = .Center
+        
         let image1 = UIImageView()
         image1.tintColor = UIColor.whiteColor()
         image1.image = UIImage(named: "ic_printer")
@@ -159,7 +93,19 @@ class ValidatedTableViewController: UITableViewController {
         image2.image = UIImage(named: "ic_garbage")
         image2.contentMode = .Center
         
-        cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11,green:0.47,blue:1.00,alpha:1.00), mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
+        cell.setSwipeGestureWithView(image0, color: UIColor(red:0.13, green:0.82, blue:0.38, alpha:1.00), mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
+            guard let audio = item.audio else { return }
+            
+            let URL = NSURL(string: audio)!
+            let player = AVPlayer(URL: URL)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.presentViewController(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
+        
+        cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11, green:0.47, blue:1.00, alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State2) { (_, _, _) in
             
             guard let path = NSBundle.mainBundle().pathForResource("Template", ofType: "html", inDirectory: "html") else { return }
             
@@ -172,10 +118,14 @@ class ValidatedTableViewController: UITableViewController {
             let printController = UIPrintInteractionController.sharedPrintController()
             printController.printFormatter = formatter
             printController.presentAnimated(true, completionHandler: nil)
+            
+            cell.swipeToOriginWithCompletion({ 
+                //
+            })
         }
         
-        cell.setSwipeGestureWithView(image2, color: UIColor(red:0.98,green:0.00,blue:0.03,alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State3) { (_, _, _) in
-            DictamedAPI.sharedInstance.deletePost(item.id, callback: { 
+        cell.setSwipeGestureWithView(image2, color: UIColor(red:0.98, green:0.00, blue:0.03, alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State3) { (_, _, _) in
+            API.sharedInstance.deleteTranscript(item.id, callback: { (_, _) in
                 self.tableView.beginUpdates()
                 self.items.removeAtIndex((self.items.indexOf { $0.id == item.id })!)
                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
