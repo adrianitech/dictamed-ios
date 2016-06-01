@@ -72,6 +72,7 @@ class ValidatedTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DocumentItemTableViewCell
 
         let item = self.items[indexPath.row]
+        cell.titleLabel.text = item.title
         cell.dateLabel.text = item.createdAt.formatDate()
         cell.contentLabel.text = item.translation
         

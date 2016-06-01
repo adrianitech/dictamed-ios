@@ -13,6 +13,8 @@ class DocumentItemTableViewCell: MCSwipeTableViewCell {
     
     @IBOutlet weak var avatarImageView: UIImageView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var contentLabel: UILabel!
