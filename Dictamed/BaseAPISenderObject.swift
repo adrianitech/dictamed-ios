@@ -13,7 +13,7 @@ class BaseAPISenderObject<T>: APISenderObjectProtocol {
     
     var path: String {
     #if DEBUG
-        return "http://dictamed-web-develop.herokuapp.com"
+        return "http://192.168.1.45:3000"
     #else
         return "http://dictamed-web-develop.herokuapp.com"
     #endif
