@@ -79,11 +79,6 @@ class ValidatedTableViewController: UITableViewController {
         if item.title == "Sent from iPhone" { cell.setDevicePhone() }
         else { cell.setDeviceWatch() }
         
-        let image0 = UIImageView()
-        image0.tintColor = UIColor.whiteColor()
-        image0.image = UIImage(named: "ic_play")
-        image0.contentMode = .Center
-        
         let image1 = UIImageView()
         image1.tintColor = UIColor.whiteColor()
         image1.image = UIImage(named: "ic_printer")
@@ -94,19 +89,7 @@ class ValidatedTableViewController: UITableViewController {
         image2.image = UIImage(named: "ic_garbage")
         image2.contentMode = .Center
         
-        cell.setSwipeGestureWithView(image0, color: UIColor(red:0.13, green:0.82, blue:0.38, alpha:1.00), mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
-            guard let audio = item.audio else { return }
-            
-            let URL = NSURL(string: audio)!
-            let player = AVPlayer(URL: URL)
-            let playerViewController = AVPlayerViewController()
-            playerViewController.player = player
-            self.presentViewController(playerViewController, animated: true) {
-                playerViewController.player!.play()
-            }
-        }
-        
-        cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11, green:0.47, blue:1.00, alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State2) { (_, _, _) in
+        cell.setSwipeGestureWithView(image1, color: UIColor(red:0.11, green:0.47, blue:1.00, alpha:1.00), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State1) { (_, _, _) in
             
             guard let path = NSBundle.mainBundle().pathForResource("Template", ofType: "html", inDirectory: "html") else { return }
             

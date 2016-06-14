@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20304E9B8B5C90A8F8BF29C0 /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */; };
+		3A0D99C01D108BD1007140DC /* Object+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D99BF1D108BD1007140DC /* Object+Helpers.swift */; };
+		3A0D99C11D108BD9007140DC /* Object+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D99BF1D108BD1007140DC /* Object+Helpers.swift */; };
 		3A0F3A361CE0BC30000CB92B /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0F3A351CE0BC30000CB92B /* DocumentTableViewCell.xib */; };
 		3A1C9AA81CDFDDC70055A9DF /* ValidatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C9AA71CDFDDC70055A9DF /* ValidatedTableViewController.swift */; };
 		3A4D03341CFCCA8200EDA758 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D03331CFCCA8200EDA758 /* html */; };
@@ -15,6 +16,7 @@
 		3A53ECC51CCCD6EA00BB274E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC31CCCD6EA00BB274E /* Main.storyboard */; };
 		3A53ECC71CCCD6EA00BB274E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A53ECCA1CCCD6EA00BB274E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC81CCCD6EA00BB274E /* LaunchScreen.storyboard */; };
+		3A57A3B5ABCB05C4349CDE99 /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF14DB8474A310D392DF4C /* Pods_Watch_Extension.framework */; };
 		3A6FC1E21CCE0BB5000EA167 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FC1E11CCE0BB5000EA167 /* AudioRecorder.swift */; };
 		3A6FC1E51CCE16A3000EA167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A53ECC61CCCD6EA00BB274E /* Assets.xcassets */; };
 		3A7007941CD23E9900DDAAD8 /* UploadInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7007931CD23E9900DDAAD8 /* UploadInterfaceController.swift */; };
@@ -58,7 +60,7 @@
 		3AD41AC81CD3A98C00361DC3 /* DocumentsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD41AC71CD3A98C00361DC3 /* DocumentsInterfaceController.swift */; };
 		3AD41ACA1CD3AC4100361DC3 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */; };
 		3AD41ACB1CD3AEB600361DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */; };
-		B562BA87BC16EDE9F54394AC /* Pods_Dictamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */; };
+		584A2569100801EC8EB94DF6 /* Pods_Dictamed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED37D935010EE63B0A7ABAC2 /* Pods_Dictamed.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +106,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F4D6D0939D18485CF42C2E /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		3A0D99BF1D108BD1007140DC /* Object+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Helpers.swift"; sourceTree = "<group>"; };
 		3A0F3A351CE0BC30000CB92B /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
 		3A1C9AA71CDFDDC70055A9DF /* ValidatedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatedTableViewController.swift; sourceTree = "<group>"; };
 		3A4D03331CFCCA8200EDA758 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
@@ -146,12 +149,12 @@
 		3AD41AC71CD3A98C00361DC3 /* DocumentsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsInterfaceController.swift; sourceTree = "<group>"; };
 		3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		3ADEC80F1CDF3E6800CA4079 /* Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Watch.entitlements; sourceTree = "<group>"; };
-		6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dictamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
-		C1A4252048175AE1B4382660 /* Pods-Dictamed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictamed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed.release.xcconfig"; sourceTree = "<group>"; };
+		6854B26AB10DC842EA5807AF /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		86DB1FEFBD95EB604DBC3803 /* Pods-Dictamed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictamed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed.debug.xcconfig"; sourceTree = "<group>"; };
+		8CDF14DB8474A310D392DF4C /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6AFF788E8C48B9EDD1F50C0 /* Pods-Dictamed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictamed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed.debug.xcconfig"; sourceTree = "<group>"; };
+		EC40C04C394227EAE25C7A4D /* Pods-Dictamed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictamed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed.release.xcconfig"; sourceTree = "<group>"; };
+		ED37D935010EE63B0A7ABAC2 /* Pods_Dictamed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dictamed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B562BA87BC16EDE9F54394AC /* Pods_Dictamed.framework in Frameworks */,
+				584A2569100801EC8EB94DF6 /* Pods_Dictamed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20304E9B8B5C90A8F8BF29C0 /* Pods_Watch_Extension.framework in Frameworks */,
+				3A57A3B5ABCB05C4349CDE99 /* Pods_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,21 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				CEAAD0DD48DDD14AE2FC4014 /* Pods.framework */,
-				6D4FAECEBC8F597772C31153 /* Pods_Dictamed.framework */,
-				1E046EAECC9C352A0FB59D2A /* Pods_Watch_Extension.framework */,
+				ED37D935010EE63B0A7ABAC2 /* Pods_Dictamed.framework */,
+				8CDF14DB8474A310D392DF4C /* Pods_Watch_Extension.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		377B8718AD82C0C49848A82E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E6AFF788E8C48B9EDD1F50C0 /* Pods-Dictamed.debug.xcconfig */,
-				C1A4252048175AE1B4382660 /* Pods-Dictamed.release.xcconfig */,
-				83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */,
-				A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		3A441E051CCF6596008250A8 /* Supporting Files */ = {
@@ -243,7 +235,7 @@
 				3A77BE051CCCE52A002C9291 /* Watch Extension */,
 				3A53ECBD1CCCD6EA00BB274E /* Products */,
 				33E3BD1AE0AD107745117A3D /* Frameworks */,
-				377B8718AD82C0C49848A82E /* Pods */,
+				F6892305203449DA04A46F3D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				3A918FB11CFE00AC00CAEAAF /* NSDate+Format.swift */,
+				3A0D99BF1D108BD1007140DC /* Object+Helpers.swift */,
 				3A918FAF1CFE00A000CAEAAF /* String+Date.swift */,
 			);
 			name = Helpers;
@@ -355,6 +348,17 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F6892305203449DA04A46F3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86DB1FEFBD95EB604DBC3803 /* Pods-Dictamed.debug.xcconfig */,
+				EC40C04C394227EAE25C7A4D /* Pods-Dictamed.release.xcconfig */,
+				26F4D6D0939D18485CF42C2E /* Pods-Watch Extension.debug.xcconfig */,
+				6854B26AB10DC842EA5807AF /* Pods-Watch Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,13 +366,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A53ECCE1CCCD6EA00BB274E /* Build configuration list for PBXNativeTarget "Dictamed" */;
 			buildPhases = (
-				A34E40200AD4E506B8168065 /* Check Pods Manifest.lock */,
+				C780500485AED62863EC830D /* [CP] Check Pods Manifest.lock */,
 				3A53ECB81CCCD6EA00BB274E /* Sources */,
 				3A53ECB91CCCD6EA00BB274E /* Frameworks */,
 				3A53ECBA1CCCD6EA00BB274E /* Resources */,
 				3A77BE171CCCE52A002C9291 /* Embed Watch Content */,
-				9C4CE4C8A0805F327406030D /* Embed Pods Frameworks */,
-				1371B40E6D65FBF85F6EA3A4 /* Copy Pods Resources */,
+				42674D7BC3268553140F03DC /* [CP] Embed Pods Frameworks */,
+				AE43CE61648FD314E1FCCDDE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,12 +406,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A77BE141CCCE52A002C9291 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
 			buildPhases = (
-				51CF0ADEBEE9870CC4C0AE51 /* Check Pods Manifest.lock */,
+				473029AC7605206F7E8380E1 /* [CP] Check Pods Manifest.lock */,
 				3A77BDFD1CCCE52A002C9291 /* Sources */,
 				3A77BDFE1CCCE52A002C9291 /* Frameworks */,
 				3A77BDFF1CCCE52A002C9291 /* Resources */,
-				58C7B40DD1116F185CD4DC5F /* Embed Pods Frameworks */,
-				DCF74260CC88EE24ED6E9A67 /* Copy Pods Resources */,
+				908C86DED03C2086502400B5 /* [CP] Embed Pods Frameworks */,
+				B46E5AB75368AC4B9C11BCDB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -513,59 +517,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1371B40E6D65FBF85F6EA3A4 /* Copy Pods Resources */ = {
+		42674D7BC3268553140F03DC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51CF0ADEBEE9870CC4C0AE51 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		58C7B40DD1116F185CD4DC5F /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C4CE4C8A0805F327406030D /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,14 +532,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A34E40200AD4E506B8168065 /* Check Pods Manifest.lock */ = {
+		473029AC7605206F7E8380E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,19 +547,64 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DCF74260CC88EE24ED6E9A67 /* Copy Pods Resources */ = {
+		908C86DED03C2086502400B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE43CE61648FD314E1FCCDDE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictamed/Pods-Dictamed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B46E5AB75368AC4B9C11BCDB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C780500485AED62863EC830D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -618,6 +622,7 @@
 				3A918FC41CFE055800CAEAAF /* PostTranscriptsAPISenderObject.swift in Sources */,
 				3AC8E5621CFDFC0700DFFF3B /* APISenderObjectProtocol.swift in Sources */,
 				3A1C9AA81CDFDDC70055A9DF /* ValidatedTableViewController.swift in Sources */,
+				3A0D99C01D108BD1007140DC /* Object+Helpers.swift in Sources */,
 				3A918FCA1CFE085200CAEAAF /* CustomTabBarController.swift in Sources */,
 				3AC8E5601CFDFC0700DFFF3B /* APICommunicationLayer.swift in Sources */,
 				3A76E1D11CD3E6EA00E459A5 /* RecordViewController.swift in Sources */,
@@ -652,6 +657,7 @@
 				3A918FBE1CFE018900CAEAAF /* String+Date.swift in Sources */,
 				3A918FB61CFE018100CAEAAF /* GetTranscriptsAPISenderObject.swift in Sources */,
 				3A77BE071CCCE52A002C9291 /* InterfaceController.swift in Sources */,
+				3A0D99C11D108BD9007140DC /* Object+Helpers.swift in Sources */,
 				3AD41ACA1CD3AC4100361DC3 /* DocumentTableViewCell.swift in Sources */,
 				3A918FC81CFE080900CAEAAF /* PostAudioAPISenderObject.swift in Sources */,
 			);
@@ -787,7 +793,7 @@
 		};
 		3A53ECCF1CCCD6EA00BB274E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6AFF788E8C48B9EDD1F50C0 /* Pods-Dictamed.debug.xcconfig */;
+			baseConfigurationReference = 86DB1FEFBD95EB604DBC3803 /* Pods-Dictamed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dictamed/Dictamed.entitlements;
@@ -803,7 +809,7 @@
 		};
 		3A53ECD01CCCD6EA00BB274E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1A4252048175AE1B4382660 /* Pods-Dictamed.release.xcconfig */;
+			baseConfigurationReference = EC40C04C394227EAE25C7A4D /* Pods-Dictamed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dictamed/Dictamed.entitlements;
@@ -857,7 +863,7 @@
 		};
 		3A77BE121CCCE52A002C9291 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83FE044374A40BBD0ACC71B6 /* Pods-Watch Extension.debug.xcconfig */;
+			baseConfigurationReference = 26F4D6D0939D18485CF42C2E /* Pods-Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -875,7 +881,7 @@
 		};
 		3A77BE131CCCE52A002C9291 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A24DBCE8B59EA7EAB48D4916 /* Pods-Watch Extension.release.xcconfig */;
+			baseConfigurationReference = 6854B26AB10DC842EA5807AF /* Pods-Watch Extension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -29,7 +29,7 @@ class APICommunicationLayer: NSObject {
                     let err = APICommunicationLayerError(code: 100, message: error.localizedDescription)
                     callback(sender, err)
                 case .Success(let value):
-                    print(value)
+//                    print(value)
                     sender.handleResult(value)
                     callback(sender, nil)
                 }

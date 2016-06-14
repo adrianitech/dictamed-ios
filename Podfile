@@ -3,6 +3,7 @@ use_frameworks!
 def common_pods
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'RealmSwift'
 end
 
 target 'Dictamed' do

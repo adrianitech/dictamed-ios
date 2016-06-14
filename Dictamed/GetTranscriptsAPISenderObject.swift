@@ -27,6 +27,19 @@ class GetTranscriptsAPISenderObject: BaseAPISenderObject<Array<TranscriptAPIMode
             }
             return model
         })
+
+        let oldResults: [TranscriptAPIModel] = TranscriptAPIModel.getAll()
+        let deletedResults = oldResults.filter { (e) -> Bool in
+            return !self.result!.contains { $0.id == e.id }
+        }
+        
+        self.result!.addAll(update: true)
+        deletedResults.delete()
+    }
+    
+    override func fetchFromRealm() -> Bool {
+        self.result = TranscriptAPIModel.getAll()
+        return true
     }
     
 }

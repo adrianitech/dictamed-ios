@@ -7,20 +7,21 @@
 //
 
 import Foundation
+import RealmSwift
 
-class TranscriptAPIModel {
+class TranscriptAPIModel: Object {
     
-    var id: String = ""
+    dynamic var id: String = ""
     
-    var title: String = ""
+    dynamic var title: String = ""
     
-    var translation: String = ""
+    dynamic var translation: String = ""
     
-    var validated: Bool = false
+    dynamic var validated: Bool = false
     
-    var createdAt: NSDate = NSDate()
+    dynamic var createdAt: NSDate = NSDate()
     
-    var audio: String?
+    dynamic var audio: String?
     
     convenience init(title: String, translation: String) {
         self.init()
@@ -48,6 +49,10 @@ class TranscriptAPIModel {
             "title"       : title,
             "translation" : translation
         ]
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
 }

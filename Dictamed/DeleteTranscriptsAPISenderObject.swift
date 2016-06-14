@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class DeleteTranscriptsAPISenderObject: BaseAPISenderObject<Array<TranscriptAPIModel>> {
+class DeleteTranscriptsAPISenderObject: BaseAPISenderObject<Bool> {
     
     var id: String!
     

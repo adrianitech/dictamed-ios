@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class PostAudioAPISenderObject: BaseAPISenderObject<TranscriptAPIModel> {
+class PostAudioAPISenderObject: BaseAPISenderObject<Bool> {
     
     var id: String!
     
