@@ -38,7 +38,9 @@ class DocumentsInterfaceController: WKInterfaceController {
         
         API.sharedInstance.getTranscripts { (obj, _) in
             if let items = obj.result {
-                self.items = items.sort { $0.validated && !$1.validated }
+                self.items = items.sort {
+                    $0.createdAt.timeIntervalSince1970 > $1.createdAt.timeIntervalSince1970
+                }
             }
         }
     }

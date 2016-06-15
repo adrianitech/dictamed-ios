@@ -25,10 +25,16 @@
                                 <real key="value" value="24"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                <color key="value" white="0.95061645340000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="value" white="0.89908089305517247" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAv-s5-RnP">
+                        <rect key="frame" x="32" y="26" width="14" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="24 Mar 2016, 12:35 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-oS-FjA">
                         <rect key="frame" x="76" y="35" width="131" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -51,6 +57,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="sAv-s5-RnP" firstAttribute="centerY" secondItem="9yU-Yt-89S" secondAttribute="centerY" id="3L6-Dn-qN0"/>
                     <constraint firstItem="uP5-fZ-die" firstAttribute="leading" secondItem="QmT-oS-FjA" secondAttribute="leading" id="Dws-Eo-Ee0"/>
                     <constraint firstItem="QmT-oS-FjA" firstAttribute="top" secondItem="f3L-mN-vV6" secondAttribute="bottom" id="FV8-ir-ggE"/>
                     <constraint firstItem="QmT-oS-FjA" firstAttribute="leading" secondItem="9yU-Yt-89S" secondAttribute="trailing" constant="13" id="Gje-q2-yCl"/>
@@ -62,6 +69,7 @@
                     <constraint firstItem="uP5-fZ-die" firstAttribute="top" secondItem="QmT-oS-FjA" secondAttribute="bottom" constant="6" id="f7K-Yf-jL2"/>
                     <constraint firstAttribute="trailing" secondItem="pyD-cv-Ej5" secondAttribute="trailing" constant="15" id="fiq-cD-7PN"/>
                     <constraint firstItem="f3L-mN-vV6" firstAttribute="leading" secondItem="9yU-Yt-89S" secondAttribute="trailing" constant="13" id="i47-Ro-Fm4"/>
+                    <constraint firstItem="sAv-s5-RnP" firstAttribute="centerX" secondItem="9yU-Yt-89S" secondAttribute="centerX" id="iME-UP-cyi"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uP5-fZ-die" secondAttribute="bottom" constant="15" id="kq7-xX-Xjz"/>
                     <constraint firstItem="f3L-mN-vV6" firstAttribute="top" secondItem="d8B-hC-NR7" secondAttribute="top" constant="15" id="wgq-PW-t48"/>
                 </constraints>
@@ -71,6 +79,7 @@
                 <outlet property="contentLabel" destination="uP5-fZ-die" id="vGS-cM-80w"/>
                 <outlet property="dateLabel" destination="QmT-oS-FjA" id="RTA-9F-bhZ"/>
                 <outlet property="deviceImageView" destination="pyD-cv-Ej5" id="92A-hc-at2"/>
+                <outlet property="letterLabel" destination="sAv-s5-RnP" id="04c-Cd-XEy"/>
                 <outlet property="titleLabel" destination="f3L-mN-vV6" id="vbQ-nf-Mbb"/>
             </connections>
             <point key="canvasLocation" x="456" y="278"/>

@@ -25,6 +25,8 @@ class ValidatedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.separatorInset = UIEdgeInsetsZero
+        
         self.tableView.tableFooterView = UIView()
         self.tableView.registerNib(UINib(nibName: "DocumentTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: "cell")
@@ -71,6 +73,9 @@ class ValidatedTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DocumentItemTableViewCell
 
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        
         let item = self.items[indexPath.row]
         cell.titleLabel.text = item.title
         cell.dateLabel.text = item.createdAt.formatDate()
