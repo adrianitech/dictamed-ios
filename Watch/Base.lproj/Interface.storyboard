@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1ar-qG-kpM">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rGM-ff-WzQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Page3-->
+        <!--Upload-->
         <scene sceneID="C19-tg-Qh0">
             <objects>
-                <controller identifier="Page3" id="Wu0-7u-3Dk" customClass="UploadInterfaceController" customModule="Watch_Extension">
+                <controller identifier="Upload" id="Wu0-7u-3Dk" customClass="UploadInterfaceController" customModule="Watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="10" id="sqY-Nl-TVg">
                             <items>
@@ -25,58 +25,68 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="974" y="973"/>
+            <point key="canvasLocation" x="1261" y="657"/>
         </scene>
-        <!--Record-->
-        <scene sceneID="2WC-Jk-AUz">
-            <objects>
-                <controller identifier="Page1" title="Record" id="1ar-qG-kpM" customClass="InterfaceController" customModule="Watch_Extension">
-                    <items>
-                        <button alignment="left" id="HhL-YQ-vY1">
-                            <group key="contentGroup" width="1" height="1" alignment="left" layout="vertical" spacing="15" id="xK2-x6-VSf">
-                                <items>
-                                    <imageView alignment="center" verticalAlignment="center" image="ic_logo_white" id="ytg-sC-PbA"/>
-                                    <label width="0.80000000000000004" alignment="center" verticalAlignment="center" text="Tap the screen to start recording" textAlignment="center" numberOfLines="0" id="2QP-EX-4X8">
-                                        <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <fontDescription key="font" type="system" pointSize="11"/>
-                                    </label>
-                                </items>
-                                <edgeInsets key="margins" left="10" right="10" top="10" bottom="10"/>
-                            </group>
-                            <connections>
-                                <action selector="record" destination="1ar-qG-kpM" id="gGB-Kh-IuL"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="974" y="653"/>
-        </scene>
-        <!--Documents-->
+        <!--Dictamed-->
         <scene sceneID="HfP-am-4DL">
             <objects>
-                <controller identifier="Page2" title="Documents" id="rGM-ff-WzQ" customClass="DocumentsInterfaceController" customModule="Watch_Extension">
+                <controller title="Dictamed" id="rGM-ff-WzQ" customClass="DocumentsInterfaceController" customModule="Watch_Extension">
                     <items>
                         <table alignment="left" id="r8g-F6-32R">
                             <items>
-                                <tableRow identifier="cell" id="bAf-wH-5mo" customClass="DocumentTableViewCell" customModule="Watch_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="2" id="wYh-eu-eVZ">
+                                <tableRow identifier="record" selectable="NO" id="hyH-2o-b8g" customClass="RecordTableViewCell" customModule="Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="4" id="DLq-y2-scx">
                                         <items>
-                                            <group width="1" alignment="left" spacing="6" id="7EE-kU-PmZ">
+                                            <button alignment="left" id="LY0-6A-qEs">
+                                                <group key="contentGroup" width="0.5" alignment="left" id="Jji-Xz-Y1Z">
+                                                    <items>
+                                                        <imageView alignment="center" verticalAlignment="center" image="ic_record" id="tSf-Ot-bX4"/>
+                                                    </items>
+                                                    <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <edgeInsets key="margins" left="6" right="6" top="10" bottom="10"/>
+                                                </group>
+                                                <connections>
+                                                    <action selector="record" destination="hyH-2o-b8g" id="pyf-hE-Giv"/>
+                                                </connections>
+                                            </button>
+                                            <button alignment="left" id="VuZ-Bl-NiC">
+                                                <group key="contentGroup" width="0.5" alignment="left" id="HDz-jZ-peg">
+                                                    <items>
+                                                        <imageView alignment="center" verticalAlignment="center" image="ic_refresh" id="BKY-Is-7sw"/>
+                                                    </items>
+                                                    <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <edgeInsets key="margins" left="6" right="6" top="10" bottom="10"/>
+                                                </group>
+                                                <connections>
+                                                    <action selector="refresh" destination="hyH-2o-b8g" id="tgB-2Y-axb"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="document" selectable="NO" id="bAf-wH-5mo" customClass="DocumentTableViewCell" customModule="Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="wYh-eu-eVZ">
+                                        <items>
+                                            <group width="4" height="1" alignment="left" radius="2" id="Dlb-Cf-qA2">
+                                                <color key="backgroundColor" red="0.97647058823529409" green="0.74509803921568629" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
+                                            <group width="1" alignment="left" layout="vertical" spacing="0.0" id="fPH-cW-HbP">
                                                 <items>
-                                                    <label width="0.90000000000000002" alignment="left" verticalAlignment="center" text="Label" id="0eA-KN-NfG">
-                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    <label alignment="left" alpha="0.75" text="Sent from Watch" id="0eA-KN-NfG">
+                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                                     </label>
-                                                    <imageView alignment="right" verticalAlignment="center" image="ic_pending" id="PvP-U4-pS2"/>
+                                                    <label alignment="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" numberOfLines="3" id="hkQ-ao-nuz"/>
                                                 </items>
                                             </group>
-                                            <label alignment="left" text="Label" numberOfLines="3" id="hkQ-ao-nuz"/>
                                         </items>
-                                        <edgeInsets key="margins" left="10" right="10" top="8" bottom="8"/>
+                                        <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
                                     </group>
                                     <connections>
                                         <outlet property="contentLabel" destination="hkQ-ao-nuz" id="tfd-ay-s9T"/>
-                                        <outlet property="imageView" destination="PvP-U4-pS2" id="MVe-MU-5gn"/>
+                                        <outlet property="lineView" destination="Dlb-Cf-qA2" id="uLy-3m-5JW"/>
                                         <outlet property="titleLabel" destination="0eA-KN-NfG" id="CpU-z5-uLe"/>
                                     </connections>
                                 </tableRow>
@@ -88,7 +98,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1253" y="653"/>
+            <point key="canvasLocation" x="974" y="657"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>

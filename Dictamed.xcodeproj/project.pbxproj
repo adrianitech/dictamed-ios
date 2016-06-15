@@ -25,7 +25,6 @@
 		3A77BDF91CCCE52A002C9291 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDF71CCCE52A002C9291 /* Interface.storyboard */; };
 		3A77BDFB1CCCE52A002C9291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BE021CCCE52A002C9291 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A77BE011CCCE52A002C9291 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3A77BE071CCCE52A002C9291 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE061CCCE52A002C9291 /* InterfaceController.swift */; };
 		3A77BE091CCCE52A002C9291 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */; };
 		3A77BE0B1CCCE52A002C9291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */; };
 		3A77BE0F1CCCE52A002C9291 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A77BDF51CCCE52A002C9291 /* Watch.app */; };
@@ -52,6 +51,7 @@
 		3A918FC81CFE080900CAEAAF /* PostAudioAPISenderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A918FC61CFE06E300CAEAAF /* PostAudioAPISenderObject.swift */; };
 		3A918FCA1CFE085200CAEAAF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A918FC91CFE085200CAEAAF /* CustomTabBarController.swift */; };
 		3A918FCC1CFE086300CAEAAF /* DocumentItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A918FCB1CFE086300CAEAAF /* DocumentItemTableViewCell.swift */; };
+		3A99058C1D11A3550054BE15 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99058B1D11A3550054BE15 /* RecordTableViewCell.swift */; };
 		3AC8E55F1CFDFC0700DFFF3B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8E55A1CFDFC0700DFFF3B /* API.swift */; };
 		3AC8E5601CFDFC0700DFFF3B /* APICommunicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8E55B1CFDFC0700DFFF3B /* APICommunicationLayer.swift */; };
 		3AC8E5611CFDFC0700DFFF3B /* APICommunicationLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8E55C1CFDFC0700DFFF3B /* APICommunicationLayerError.swift */; };
@@ -127,7 +127,6 @@
 		3A77BDFA1CCCE52A002C9291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A77BDFC1CCCE52A002C9291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A77BE011CCCE52A002C9291 /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A77BE061CCCE52A002C9291 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		3A77BE081CCCE52A002C9291 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3A77BE0A1CCCE52A002C9291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A77BE0C1CCCE52A002C9291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +140,7 @@
 		3A918FC61CFE06E300CAEAAF /* PostAudioAPISenderObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAudioAPISenderObject.swift; sourceTree = "<group>"; };
 		3A918FC91CFE085200CAEAAF /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		3A918FCB1CFE086300CAEAAF /* DocumentItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentItemTableViewCell.swift; sourceTree = "<group>"; };
+		3A99058B1D11A3550054BE15 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		3AC8E55A1CFDFC0700DFFF3B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3AC8E55B1CFDFC0700DFFF3B /* APICommunicationLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommunicationLayer.swift; sourceTree = "<group>"; };
 		3AC8E55C1CFDFC0700DFFF3B /* APICommunicationLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommunicationLayerError.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 			children = (
 				3AD41AC71CD3A98C00361DC3 /* DocumentsInterfaceController.swift */,
 				3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */,
-				3A77BE061CCCE52A002C9291 /* InterfaceController.swift */,
+				3A99058B1D11A3550054BE15 /* RecordTableViewCell.swift */,
 				3A7007931CD23E9900DDAAD8 /* UploadInterfaceController.swift */,
 			);
 			name = Controllers;
@@ -647,6 +647,7 @@
 				3AD41AC81CD3A98C00361DC3 /* DocumentsInterfaceController.swift in Sources */,
 				3A918FB51CFE018100CAEAAF /* TranscriptAPIModel.swift in Sources */,
 				3A77BE091CCCE52A002C9291 /* ExtensionDelegate.swift in Sources */,
+				3A99058C1D11A3550054BE15 /* RecordTableViewCell.swift in Sources */,
 				3A918FC51CFE068C00CAEAAF /* PostTranscriptsAPISenderObject.swift in Sources */,
 				3A7007941CD23E9900DDAAD8 /* UploadInterfaceController.swift in Sources */,
 				3A918FBD1CFE018100CAEAAF /* BaseAPISenderObject.swift in Sources */,
@@ -656,7 +657,6 @@
 				3A918FBC1CFE018100CAEAAF /* APISenderObjectProtocol.swift in Sources */,
 				3A918FBE1CFE018900CAEAAF /* String+Date.swift in Sources */,
 				3A918FB61CFE018100CAEAAF /* GetTranscriptsAPISenderObject.swift in Sources */,
-				3A77BE071CCCE52A002C9291 /* InterfaceController.swift in Sources */,
 				3A0D99C11D108BD9007140DC /* Object+Helpers.swift in Sources */,
 				3AD41ACA1CD3AC4100361DC3 /* DocumentTableViewCell.swift in Sources */,
 				3A918FC81CFE080900CAEAAF /* PostAudioAPISenderObject.swift in Sources */,

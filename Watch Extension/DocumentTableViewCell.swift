@@ -14,6 +14,6 @@ class DocumentTableViewCell: NSObject {
     
     @IBOutlet var contentLabel: WKInterfaceLabel!
     
-    @IBOutlet var imageView: WKInterfaceImage!
+    @IBOutlet var lineView: WKInterfaceGroup!
     
 }
