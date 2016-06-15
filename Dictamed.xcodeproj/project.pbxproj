@@ -52,6 +52,7 @@
 		3A918FCA1CFE085200CAEAAF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A918FC91CFE085200CAEAAF /* CustomTabBarController.swift */; };
 		3A918FCC1CFE086300CAEAAF /* DocumentItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A918FCB1CFE086300CAEAAF /* DocumentItemTableViewCell.swift */; };
 		3A99058C1D11A3550054BE15 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99058B1D11A3550054BE15 /* RecordTableViewCell.swift */; };
+		3AA20B431D11C421001F60F8 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA20B421D11C421001F60F8 /* ComplicationController.swift */; };
 		3AC8E55F1CFDFC0700DFFF3B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8E55A1CFDFC0700DFFF3B /* API.swift */; };
 		3AC8E5601CFDFC0700DFFF3B /* APICommunicationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8E55B1CFDFC0700DFFF3B /* APICommunicationLayer.swift */; };
 		3AC8E5611CFDFC0700DFFF3B /* APICommunicationLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC8E55C1CFDFC0700DFFF3B /* APICommunicationLayerError.swift */; };
@@ -141,6 +142,7 @@
 		3A918FC91CFE085200CAEAAF /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		3A918FCB1CFE086300CAEAAF /* DocumentItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentItemTableViewCell.swift; sourceTree = "<group>"; };
 		3A99058B1D11A3550054BE15 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		3AA20B421D11C421001F60F8 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3AC8E55A1CFDFC0700DFFF3B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3AC8E55B1CFDFC0700DFFF3B /* APICommunicationLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommunicationLayer.swift; sourceTree = "<group>"; };
 		3AC8E55C1CFDFC0700DFFF3B /* APICommunicationLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommunicationLayerError.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		3A918FCD1CFE08B300CAEAAF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3AA20B421D11C421001F60F8 /* ComplicationController.swift */,
 				3AD41AC71CD3A98C00361DC3 /* DocumentsInterfaceController.swift */,
 				3AD41AC91CD3AC4100361DC3 /* DocumentTableViewCell.swift */,
 				3A99058B1D11A3550054BE15 /* RecordTableViewCell.swift */,
@@ -658,6 +661,7 @@
 				3A918FBE1CFE018900CAEAAF /* String+Date.swift in Sources */,
 				3A918FB61CFE018100CAEAAF /* GetTranscriptsAPISenderObject.swift in Sources */,
 				3A0D99C11D108BD9007140DC /* Object+Helpers.swift in Sources */,
+				3AA20B431D11C421001F60F8 /* ComplicationController.swift in Sources */,
 				3AD41ACA1CD3AC4100361DC3 /* DocumentTableViewCell.swift in Sources */,
 				3A918FC81CFE080900CAEAAF /* PostAudioAPISenderObject.swift in Sources */,
 			);
@@ -865,6 +869,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26F4D6D0939D18485CF42C2E /* Pods-Watch Extension.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
@@ -883,6 +888,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6854B26AB10DC842EA5807AF /* Pods-Watch Extension.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";

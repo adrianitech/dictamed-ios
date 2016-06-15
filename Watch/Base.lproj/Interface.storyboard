@@ -38,24 +38,22 @@
                                     <group key="rootItem" width="1" height="0.0" alignment="left" spacing="4" id="DLq-y2-scx">
                                         <items>
                                             <button alignment="left" id="LY0-6A-qEs">
-                                                <group key="contentGroup" width="0.5" alignment="left" id="Jji-Xz-Y1Z">
+                                                <group key="contentGroup" width="0.5" height="40" alignment="left" id="Jji-Xz-Y1Z">
                                                     <items>
                                                         <imageView alignment="center" verticalAlignment="center" image="ic_record" id="tSf-Ot-bX4"/>
                                                     </items>
                                                     <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <edgeInsets key="margins" left="6" right="6" top="10" bottom="10"/>
                                                 </group>
                                                 <connections>
                                                     <action selector="record" destination="hyH-2o-b8g" id="pyf-hE-Giv"/>
                                                 </connections>
                                             </button>
                                             <button alignment="left" id="VuZ-Bl-NiC">
-                                                <group key="contentGroup" width="0.5" alignment="left" id="HDz-jZ-peg">
+                                                <group key="contentGroup" width="0.5" height="40" alignment="left" id="HDz-jZ-peg">
                                                     <items>
                                                         <imageView alignment="center" verticalAlignment="center" image="ic_refresh" id="BKY-Is-7sw"/>
                                                     </items>
                                                     <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <edgeInsets key="margins" left="6" right="6" top="10" bottom="10"/>
                                                 </group>
                                                 <connections>
                                                     <action selector="refresh" destination="hyH-2o-b8g" id="tgB-2Y-axb"/>
